@@ -4,24 +4,25 @@ var board = [[0,1,2,3], [4,5,6,7], [8,9,10,11], [12,13,14,15]]
 var imgNode = preload("res://SlidePuzzleImage.tscn")
 var img = []
 
+var frames = 16
+var rows = 4
+
 var speed = 4
 
 var section1 = -1
 var section2 = -1
-var node1
-var node2
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var counter = 0
-	for x in range(16):
+	for x in range(frames):
 		var section = imgNode.instantiate()
 		section.get_child(0).frame = x
 		img.append(section)
 	img.shuffle()
-	for x in range(16):
+	for x in range(frames):
 		img[x].position = Vector2(counter*64, (x/4)*64)
 		counter += 1
-		if counter == 4:
+		if counter == rows:
 			counter = 0
 		add_child(img[x])
 	print(get_children().size())
