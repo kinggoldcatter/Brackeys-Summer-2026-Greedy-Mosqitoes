@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bssm6mii8oj24"]
 
-[ext_resource type="Texture2D" uid="uid://bal4odlcp7i0w" path="res://icon.svg" id="1_ow08u"]
-[ext_resource type="Script" uid="uid://v5axbew42txq" path="res://slide_puzzle_image.gd" id="1_uuh3j"]
+[ext_resource type="Texture2D" uid="uid://bal4odlcp7i0w" path="res://Sprites/icon.svg" id="1_ow08u"]
+[ext_resource type="Script" uid="uid://v5axbew42txq" path="res://Scripts/slide_puzzle_image.gd" id="1_uuh3j"]
 
 [node name="Control" type="Control" unique_id=1368818054]
 layout_mode = 3

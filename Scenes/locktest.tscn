@@ -1,0 +1,661 @@
+[gd_scene format=3 uid="uid://bg2ewmjh6sp5o"]
+
+[ext_resource type="Script" uid="uid://dqya4yiiuu4l7" path="res://Scripts/lock_script.gd" id="1_3l4ds"]
+[ext_resource type="Texture2D" uid="uid://1uo7oj4r0iuq" path="res://Sprites/arrow-icon.png" id="2_0xm2m"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_4c57u"]
+viewport_path = NodePath("LockHolder/ArrowHolder/Sprite3D/SubViewport")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4ql68"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ig7tw"]
+albedo_color = Color(0.44251478, 0.49973837, 0.46012205, 1)
+metallic = 0.3
+metallic_specular = 0.7
+roughness = 0.25
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7dm0k"]
+viewport_path = NodePath("LockHolder/Disc1/0/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_ig7tw"]
+viewport_path = NodePath("LockHolder/Disc1/1/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_0xm2m"]
+viewport_path = NodePath("LockHolder/Disc1/2/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_h2yge"]
+viewport_path = NodePath("LockHolder/Disc1/3/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_1bvp3"]
+viewport_path = NodePath("LockHolder/Disc1/4/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lquwl"]
+viewport_path = NodePath("LockHolder/Disc1/5/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_7mycd"]
+viewport_path = NodePath("LockHolder/Disc1/6/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_272bh"]
+viewport_path = NodePath("LockHolder/Disc1/7/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5vw27"]
+viewport_path = NodePath("LockHolder/Disc1/8/Sprite3D/SubViewport")
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_kek77"]
+viewport_path = NodePath("LockHolder/Disc1/9/Sprite3D/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7dm0k"]
+albedo_color = Color(0.1764706, 0.1882353, 0.18431373, 1)
+metallic_specular = 0.3
+roughness = 0.8
+
+[node name="Main" type="Node3D" unique_id=1107235901]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=129119475]
+transform = Transform3D(-0.88685286, -0.015480139, 0.46179253, 0.46172225, 0.008059378, 0.886988, -0.017452456, 0.99984765, 4.3616698e-08, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=705840058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.4)
+
+[node name="LockHolder" type="Node3D" parent="." unique_id=2066017204 node_paths=PackedStringArray("discArr", "arrowHolder")]
+script = ExtResource("1_3l4ds")
+discArr = [NodePath("Disc1"), NodePath("Disc2"), NodePath("Disc3")]
+arrowHolder = NodePath("ArrowHolder")
+
+[node name="ArrowHolder" type="Node3D" parent="LockHolder" unique_id=1597441373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.115, 0, 0.125)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/ArrowHolder" unique_id=802569175]
+transform = Transform3D(-0.025, 2.1855695e-09, 0, -2.1855695e-09, -0.025, 0, 0, 0, 0.025, 0, 0.05, 0)
+texture = SubResource("ViewportTexture_4c57u")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/ArrowHolder/Sprite3D" unique_id=22889440]
+transparent_bg = true
+size = Vector2i(96, 78)
+
+[node name="TextureRect" type="TextureRect" parent="LockHolder/ArrowHolder/Sprite3D/SubViewport" unique_id=196985103]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0xm2m")
+
+[node name="Sprite3D2" type="Sprite3D" parent="LockHolder/ArrowHolder" unique_id=777794857]
+transform = Transform3D(0.025, 0, 0, 0, 0.025, 0, 0, 0, 0.025, 0, -0.05, 0)
+texture = SubResource("ViewportTexture_4c57u")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/ArrowHolder/Sprite3D2" unique_id=1267272827]
+transparent_bg = true
+size = Vector2i(96, 78)
+
+[node name="TextureRect" type="TextureRect" parent="LockHolder/ArrowHolder/Sprite3D2/SubViewport" unique_id=103317826]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_0xm2m")
+
+[node name="Disc1" type="MeshInstance3D" parent="LockHolder" unique_id=2508722]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, -0.125, 0, 0)
+mesh = SubResource("CylinderMesh_4ql68")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="0" type="Node3D" parent="LockHolder/Disc1" unique_id=432293123]
+transform = Transform3D(0.8, 1.7053025e-14, 0, -1.1368682e-14, 1.2, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/0" unique_id=1086746020]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7dm0k")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/0/Sprite3D" unique_id=194831905]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/0/Sprite3D/SubViewport" unique_id=1491593235]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Node3D" parent="LockHolder/Disc1" unique_id=1598067651]
+transform = Transform3D(0.64721364, 1.3796187e-14, 0.4702282, -1.1368682e-14, 1.2, -6.7762637e-22, -0.4702282, -1.0023515e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/1" unique_id=2044467785]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_ig7tw")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/1/Sprite3D" unique_id=191267090]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/1/Sprite3D/SubViewport" unique_id=1140791611]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Node3D" parent="LockHolder/Disc1" unique_id=1187245309]
+transform = Transform3D(0.24721359, 0, 0.76084524, 0, 1.2, 0, -0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/2" unique_id=1705904358]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_0xm2m")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/2/Sprite3D" unique_id=1679501251]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/2/Sprite3D/SubViewport" unique_id=522177563]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Node3D" parent="LockHolder/Disc1" unique_id=2121214102]
+transform = Transform3D(-0.24721363, 0, 0.7608452, 0, 1.2, 0, -0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/3" unique_id=2108806435]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_h2yge")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/3/Sprite3D" unique_id=472434252]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/3/Sprite3D/SubViewport" unique_id=300185902]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Node3D" parent="LockHolder/Disc1" unique_id=1571364265]
+transform = Transform3D(-0.64721364, 2.7592373e-14, 0.47022817, 2.2737364e-14, 1.2, 1.3552524e-21, -0.47022817, 2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/4" unique_id=411750719]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_1bvp3")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/4/Sprite3D" unique_id=864645138]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/4/Sprite3D/SubViewport" unique_id=1514963822]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Node3D" parent="LockHolder/Disc1" unique_id=1880348278]
+transform = Transform3D(-0.8, 1.7053025e-14, -1.2079664e-07, 1.1368682e-14, 1.2, 1.92593e-35, 1.2079664e-07, -2.574935e-21, -0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/5" unique_id=1791688630]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_lquwl")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/5/Sprite3D" unique_id=1566496714]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/5/Sprite3D/SubViewport" unique_id=1647697984]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Node3D" parent="LockHolder/Disc1" unique_id=204983426]
+transform = Transform3D(-0.64721364, 2.7592373e-14, -0.47022817, 2.2737364e-14, 1.2, -1.3552524e-21, 0.47022817, -2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/6" unique_id=114039458]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7mycd")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/6/Sprite3D" unique_id=1016567662]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/6/Sprite3D/SubViewport" unique_id=865740345]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="Node3D" parent="LockHolder/Disc1" unique_id=1287124425]
+transform = Transform3D(-0.24721363, 0, -0.7608452, 0, 1.2, 0, 0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/7" unique_id=1582999120]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_272bh")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/7/Sprite3D" unique_id=1920722548]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/7/Sprite3D/SubViewport" unique_id=1480409266]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Node3D" parent="LockHolder/Disc1" unique_id=1410537302]
+transform = Transform3D(0.24721359, 0, -0.76084524, 0, 1.2, 0, 0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/8" unique_id=1422834878]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_5vw27")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/8/Sprite3D" unique_id=133958382]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/8/Sprite3D/SubViewport" unique_id=1414784086]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="9" type="Node3D" parent="LockHolder/Disc1" unique_id=2073739673]
+transform = Transform3D(0.64721364, 1.3796189e-14, -0.47022817, -1.1368684e-14, 1.2, -3.3881323e-22, 0.47022817, 1.0023516e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc1/9" unique_id=201131066]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_kek77")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc1/9/Sprite3D" unique_id=1406997235]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc1/9/Sprite3D/SubViewport" unique_id=1419807395]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="barrier" type="MeshInstance3D" parent="LockHolder" unique_id=1407401945]
+transform = Transform3D(-5.2453668e-08, -0.05, 0, 1.2, -2.1855695e-09, 0, 0, 0, 1.2, -0.062, 0, 0)
+mesh = SubResource("CylinderMesh_4ql68")
+surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
+
+[node name="Disc2" type="MeshInstance3D" parent="LockHolder" unique_id=1091086518]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("CylinderMesh_4ql68")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="0" type="Node3D" parent="LockHolder/Disc2" unique_id=141744611]
+transform = Transform3D(0.8, 1.7053025e-14, 0, -1.1368682e-14, 1.2, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/0" unique_id=569474417]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7dm0k")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/0/Sprite3D" unique_id=348503979]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/0/Sprite3D/SubViewport" unique_id=1254043646]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Node3D" parent="LockHolder/Disc2" unique_id=477267818]
+transform = Transform3D(0.64721364, 1.3796187e-14, 0.4702282, -1.1368682e-14, 1.2, -6.7762637e-22, -0.4702282, -1.0023515e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/1" unique_id=2128555651]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_ig7tw")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/1/Sprite3D" unique_id=409291673]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/1/Sprite3D/SubViewport" unique_id=1891960194]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Node3D" parent="LockHolder/Disc2" unique_id=565881064]
+transform = Transform3D(0.24721359, 0, 0.76084524, 0, 1.2, 0, -0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/2" unique_id=1774463254]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_0xm2m")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/2/Sprite3D" unique_id=1035994405]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/2/Sprite3D/SubViewport" unique_id=187541438]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Node3D" parent="LockHolder/Disc2" unique_id=684119986]
+transform = Transform3D(-0.24721363, 0, 0.7608452, 0, 1.2, 0, -0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/3" unique_id=1727254554]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_h2yge")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/3/Sprite3D" unique_id=121466379]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/3/Sprite3D/SubViewport" unique_id=758533311]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Node3D" parent="LockHolder/Disc2" unique_id=1360203784]
+transform = Transform3D(-0.64721364, 2.7592373e-14, 0.47022817, 2.2737364e-14, 1.2, 1.3552524e-21, -0.47022817, 2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/4" unique_id=675826034]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_1bvp3")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/4/Sprite3D" unique_id=176693000]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/4/Sprite3D/SubViewport" unique_id=586341444]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Node3D" parent="LockHolder/Disc2" unique_id=1576683647]
+transform = Transform3D(-0.8, 1.7053025e-14, -1.2079664e-07, 1.1368682e-14, 1.2, 1.92593e-35, 1.2079664e-07, -2.574935e-21, -0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/5" unique_id=649251400]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_lquwl")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/5/Sprite3D" unique_id=1006855664]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/5/Sprite3D/SubViewport" unique_id=331256946]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Node3D" parent="LockHolder/Disc2" unique_id=752702614]
+transform = Transform3D(-0.64721364, 2.7592373e-14, -0.47022817, 2.2737364e-14, 1.2, -1.3552524e-21, 0.47022817, -2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/6" unique_id=955205420]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7mycd")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/6/Sprite3D" unique_id=2103025815]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/6/Sprite3D/SubViewport" unique_id=2085399809]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="Node3D" parent="LockHolder/Disc2" unique_id=1322332819]
+transform = Transform3D(-0.24721363, 0, -0.7608452, 0, 1.2, 0, 0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/7" unique_id=1438432759]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_272bh")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/7/Sprite3D" unique_id=1169011859]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/7/Sprite3D/SubViewport" unique_id=391932362]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Node3D" parent="LockHolder/Disc2" unique_id=1452620085]
+transform = Transform3D(0.24721359, 0, -0.76084524, 0, 1.2, 0, 0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/8" unique_id=223737750]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_5vw27")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/8/Sprite3D" unique_id=829015212]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/8/Sprite3D/SubViewport" unique_id=972820399]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="9" type="Node3D" parent="LockHolder/Disc2" unique_id=540184377]
+transform = Transform3D(0.64721364, 1.3796189e-14, -0.47022817, -1.1368684e-14, 1.2, -3.3881323e-22, 0.47022817, 1.0023516e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc2/9" unique_id=1468728513]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_kek77")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc2/9/Sprite3D" unique_id=796048086]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc2/9/Sprite3D/SubViewport" unique_id=637687919]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="barrier2" type="MeshInstance3D" parent="LockHolder" unique_id=823661925]
+transform = Transform3D(-5.2453668e-08, -0.05, 0, 1.2, -2.1855695e-09, 0, 0, 0, 1.2, 0.062, 0, 0)
+mesh = SubResource("CylinderMesh_4ql68")
+surface_material_override/0 = SubResource("StandardMaterial3D_7dm0k")
+
+[node name="Disc3" type="MeshInstance3D" parent="LockHolder" unique_id=1680042086]
+transform = Transform3D(-4.371139e-08, -0.2, 0, 1, -8.742278e-09, 0, 0, 0, 1, 0.125, 0, 0)
+mesh = SubResource("CylinderMesh_4ql68")
+surface_material_override/0 = SubResource("StandardMaterial3D_ig7tw")
+
+[node name="0" type="Node3D" parent="LockHolder/Disc3" unique_id=1817223979]
+transform = Transform3D(0.8, 1.7053025e-14, 0, -1.1368682e-14, 1.2, 0, 0, 0, 0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/0" unique_id=810603828]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7dm0k")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/0/Sprite3D" unique_id=263087403]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/0/Sprite3D/SubViewport" unique_id=1755960924]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="1" type="Node3D" parent="LockHolder/Disc3" unique_id=1135441504]
+transform = Transform3D(0.64721364, 1.3796187e-14, 0.4702282, -1.1368682e-14, 1.2, -6.7762637e-22, -0.4702282, -1.0023515e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/1" unique_id=1618975698]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_ig7tw")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/1/Sprite3D" unique_id=1267771699]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/1/Sprite3D/SubViewport" unique_id=439953976]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="2" type="Node3D" parent="LockHolder/Disc3" unique_id=621750091]
+transform = Transform3D(0.24721359, 0, 0.76084524, 0, 1.2, 0, -0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/2" unique_id=78477335]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_0xm2m")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/2/Sprite3D" unique_id=1827602236]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/2/Sprite3D/SubViewport" unique_id=1719660258]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="3" type="Node3D" parent="LockHolder/Disc3" unique_id=1959035580]
+transform = Transform3D(-0.24721363, 0, 0.7608452, 0, 1.2, 0, -0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/3" unique_id=1611914898]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_h2yge")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/3/Sprite3D" unique_id=1819761297]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/3/Sprite3D/SubViewport" unique_id=764228080]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="4" type="Node3D" parent="LockHolder/Disc3" unique_id=1217489764]
+transform = Transform3D(-0.64721364, 2.7592373e-14, 0.47022817, 2.2737364e-14, 1.2, 1.3552524e-21, -0.47022817, 2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/4" unique_id=1521068567]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_1bvp3")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/4/Sprite3D" unique_id=1197033602]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/4/Sprite3D/SubViewport" unique_id=504810801]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="5" type="Node3D" parent="LockHolder/Disc3" unique_id=329318113]
+transform = Transform3D(-0.8, 1.7053025e-14, -1.2079664e-07, 1.1368682e-14, 1.2, 1.92593e-35, 1.2079664e-07, -2.574935e-21, -0.8, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/5" unique_id=656609132]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_lquwl")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/5/Sprite3D" unique_id=529117043]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/5/Sprite3D/SubViewport" unique_id=128829010]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="6" type="Node3D" parent="LockHolder/Disc3" unique_id=430066826]
+transform = Transform3D(-0.64721364, 2.7592373e-14, -0.47022817, 2.2737364e-14, 1.2, -1.3552524e-21, 0.47022817, -2.0047032e-14, -0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/6" unique_id=886053398]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_7mycd")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/6/Sprite3D" unique_id=1668720250]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/6/Sprite3D/SubViewport" unique_id=2083069351]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="7" type="Node3D" parent="LockHolder/Disc3" unique_id=1696035286]
+transform = Transform3D(-0.24721363, 0, -0.7608452, 0, 1.2, 0, 0.7608452, 0, -0.24721363, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/7" unique_id=1777397765]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_272bh")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/7/Sprite3D" unique_id=1359372022]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/7/Sprite3D/SubViewport" unique_id=2074536373]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="8" type="Node3D" parent="LockHolder/Disc3" unique_id=1894217875]
+transform = Transform3D(0.24721359, 0, -0.76084524, 0, 1.2, 0, 0.76084524, 0, 0.24721359, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/8" unique_id=489297056]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_5vw27")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/8/Sprite3D" unique_id=1953964451]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/8/Sprite3D/SubViewport" unique_id=946488110]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="9" type="Node3D" parent="LockHolder/Disc3" unique_id=118709159]
+transform = Transform3D(0.64721364, 1.3796189e-14, -0.47022817, -1.1368684e-14, 1.2, -3.3881323e-22, 0.47022817, 1.0023516e-14, 0.64721364, 0, 0, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="LockHolder/Disc3/9" unique_id=425000360]
+transform = Transform3D(-6.556708e-08, 0.45, 0, -1.5, -1.9670129e-08, 0, 0, 0, 0.45, 0, 0, 0.125)
+texture = SubResource("ViewportTexture_kek77")
+
+[node name="SubViewport" type="SubViewport" parent="LockHolder/Disc3/9/Sprite3D" unique_id=1721282821]
+transparent_bg = true
+size = Vector2i(128, 128)
+
+[node name="Label" type="Label" parent="LockHolder/Disc3/9/Sprite3D/SubViewport" unique_id=934915851]
+offset_right = 128.0
+offset_bottom = 128.0
+text = "9"
+horizontal_alignment = 1
+vertical_alignment = 1

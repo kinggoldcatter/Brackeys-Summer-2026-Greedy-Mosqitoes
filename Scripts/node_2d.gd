@@ -1,7 +1,7 @@
 extends Node2D
 
 var board = [[0,1,2,3], [4,5,6,7], [8,9,10,11], [12,13,14,15]]
-var imgNode = preload("res://SlidePuzzleImage.tscn")
+var imgNode = preload("res://Scenes//SlidePuzzleImage.tscn")
 var img = []
 
 var frames = 16
@@ -11,6 +11,9 @@ var speed = 4
 
 var section1 = -1
 var section2 = -1
+
+var finished = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var counter = 0
@@ -49,4 +52,6 @@ func _swap_images():
 			break
 		count += 1
 		if count >= get_children().size():
-			print("success")
+			if !finished:
+				print("success")
+				finished=true
