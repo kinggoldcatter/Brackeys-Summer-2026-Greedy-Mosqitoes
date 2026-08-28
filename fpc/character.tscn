@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cc1m2a1obsyn4"]
 
-[ext_resource type="Script" uid="uid://hutuis63hgev" path="res://addons/fpc/character.gd" id="1_0t4e8"]
-[ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://addons/fpc/EditorModule.gd" id="3_v3ckk"]
-[ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://addons/fpc/debug.gd" id="3_x1wcc"]
+[ext_resource type="Script" uid="uid://hutuis63hgev" path="res://fpc/character.gd" id="1_0t4e8"]
+[ext_resource type="Script" uid="uid://dgfl3skp075ft" path="res://fpc/EditorModule.gd" id="3_v3ckk"]
+[ext_resource type="Script" uid="uid://u5u7xxlvmcxx" path="res://fpc/debug.gd" id="3_x1wcc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kp17n"]
 albedo_color = Color(0.909804, 0.596078, 0, 1)
@@ -406,6 +406,7 @@ libraries/ = SubResource("AnimationLibrary_5e5t5")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 
 [node name="Camera" type="Camera3D" parent="Head" unique_id=428476260]
+current = true
 
 [node name="HeadbobAnimation" type="AnimationPlayer" parent="Head" unique_id=2050130428]
 libraries/ = SubResource("AnimationLibrary_o0unb")

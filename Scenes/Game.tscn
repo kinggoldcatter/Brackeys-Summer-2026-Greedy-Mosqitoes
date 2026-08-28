@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://fpc/character.tscn" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_gl6un"]
+[ext_resource type="Script" uid="uid://pv5fg4e5u406" path="res://Scripts/WorkStations/interact_region.gd" id="3_kldst"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kldst"]
+size = Vector3(3.344162, 3.0024414, 4.472046)
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -27,6 +31,26 @@ offset_bottom = 40.0
 
 [node name="GameWorld" type="Node3D" parent="." unique_id=1204066649]
 
+[node name="BookStation" type="Node3D" parent="GameWorld" unique_id=2092422534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 11.678404)
+
+[node name="Grimoire" parent="GameWorld/BookStation" unique_id=862377441 instance=ExtResource("2_gl6un")]
+transform = Transform3D(-0.9993387, 0, 0.036360443, 0.035995323, 0.14135927, 0.98930365, -0.0051398855, 0.98995835, -0.14126578, -0.4525848, 2.009865, 0.16537285)
+
+[node name="Camera3D" type="Camera3D" parent="GameWorld/BookStation" unique_id=449507191]
+transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.06421471, 2.7036786, 0.23899174)
+
+[node name="InteractRegion" type="Area3D" parent="GameWorld/BookStation" unique_id=287748563]
+script = ExtResource("3_kldst")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/BookStation/InteractRegion" unique_id=744585868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038154602, 1.4819403, -0.047668457)
+shape = SubResource("BoxShape3D_kldst")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="GameWorld/BookStation/InteractRegion" unique_id=674393513]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0531569, 0.5995655)
+aabb = AABB(-1, -1, -1, 2, 0.84, 1.13)
+
 [node name="Floor" type="Node3D" parent="GameWorld" unique_id=555609198]
 
 [node name="FloorMesh" type="MeshInstance3D" parent="GameWorld/Floor" unique_id=1660256763]
@@ -38,7 +62,8 @@ mesh = SubResource("PrismMesh_dxtnk")
 [node name="FloorShape" type="CollisionShape3D" parent="GameWorld/Floor/FloorCollider" unique_id=1193896998]
 shape = SubResource("BoxShape3D_mtjto")
 
-[node name="Character" parent="GameWorld" unique_id=1664366571 instance=ExtResource("1_iukft")]
+[node name="Character" parent="GameWorld" unique_id=1664366571 groups=["the_player"] instance=ExtResource("1_iukft")]
+unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.7937975, 0.59148026, -11.233246)
 default_reticle = "uid://coqpusufa8a6k"
 
@@ -48,5 +73,7 @@ transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.414
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
 environment = SubResource("Environment_iukft")
 
-[node name="Grimoire" parent="." unique_id=862377441 instance=ExtResource("2_gl6un")]
-transform = Transform3D(-0.9993387, 0, 0.036360443, 0, 1, 0, -0.036360443, 0, -0.9993387, 0, 2.009865, 0)
+[connection signal="body_entered" from="GameWorld/BookStation/InteractRegion" to="GameWorld/BookStation/InteractRegion" method="_on_body_entered"]
+[connection signal="body_exited" from="GameWorld/BookStation/InteractRegion" to="GameWorld/BookStation/InteractRegion" method="_on_body_exited"]
+[connection signal="screen_entered" from="GameWorld/BookStation/InteractRegion/VisibleOnScreenNotifier3D" to="GameWorld/BookStation/InteractRegion" method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="GameWorld/BookStation/InteractRegion/VisibleOnScreenNotifier3D" to="GameWorld/BookStation/InteractRegion" method="_on_visible_on_screen_notifier_3d_screen_exited"]
