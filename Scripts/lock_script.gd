@@ -21,13 +21,13 @@ func _ready() -> void:
 	print(numStr)
 
 func _input(event):
-	if event.is_action_pressed("lockLeft"):
+	if event.is_action_pressed("moveUp"):
 		if(disc>0):
 			disc-=1
 			#print("disc: "+str(disc))
 		#else:
 			#print("disc at left")
-	elif event.is_action_pressed("lockRight"):
+	elif event.is_action_pressed("moveDown"):
 		if(disc<2):
 			disc+=1
 			#print("disc: "+str(disc))
@@ -35,33 +35,35 @@ func _input(event):
 			#print("disc at right")
 	
 	if(disc==0):
-		arrowHolder.position.x = -0.115
+		arrowHolder.position.y = 0.115
 	elif(disc==1):
-		arrowHolder.position.x = 0
+		arrowHolder.position.y = 0
 	elif(disc==2):
-		arrowHolder.position.x = 0.115
+		arrowHolder.position.y = -0.115
 	
-	var curr = round(discArr[disc].rotation_degrees.x)
+	var curr = round(discArr[disc].rotation_degrees.y)
 	var changed = false
 	
-	if event.is_action_pressed("discUp"):
+	if event.is_action_pressed("lockLeft"):
 		curr = curr + 36
 		changed = true
-	elif event.is_action_pressed("discDown"):
+	elif event.is_action_pressed("lockRight"):
 		curr = curr - 36
 		changed = true
 		
 	if changed:
 		var temp = "\n"+str(curr)
 		curr = fmod(curr+360, 360)
+		
 		temp = temp + " -> "+str(curr)
 		#print(temp)
 		
-		discArr[disc].rotation_degrees.x=round(curr)
-		#var testStr = "rotation:"+str(discArr[disc].rotation_degrees.x)
-		#print(testStr)
+		#var cMSG = str(curr)+" | "+str(round(curr))
+		#print("cmsg: "+cMSG)
+		discArr[disc].rotation_degrees.y=int(round(curr))
+		#print("rotation: "+str(discArr[disc].rotation_degrees.y))
 		_updateNum()
-		#print("num: "+numStr)
+		print("num: "+numStr)
 		
 	if event.is_action_pressed("checkLock"):
 		print("\n"+numStr + " = [" +answer+"]")
@@ -73,16 +75,16 @@ func _input(event):
 		
 
 func _updateNum():
-	var rot = round(discArr[0].rotation_degrees.x)
-	numArr[0] = rot/36.0
+	var rot = round(discArr[0].rotation_degrees.y)
+	numArr[0] = fmod(10-rot/36.0, 10)
 	
-	rot = round(discArr[1].rotation_degrees.x)
+	rot = round(discArr[1].rotation_degrees.y)
 	#testStr = testStr +", "+str(rot)
-	numArr[1] = rot/36.0
+	numArr[1] = fmod(10-rot/36.0, 10)
 	
-	rot = round(discArr[2].rotation_degrees.x)
+	rot = round(discArr[2].rotation_degrees.y)
 	#testStr = testStr +", "+str(rot)
-	numArr[2] = rot/36.0
+	numArr[2] = fmod(10-rot/36.0, 10)
 	
 	
 	#numStr = "= = = ="
