@@ -8,6 +8,8 @@ size = Vector3(30, 30, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtjto"]
 size = Vector3(30, 1, 30)
 
+[sub_resource type="Environment" id="Environment_iukft"]
+
 [node name="Game" type="Node3D" unique_id=837930261]
 
 [node name="MainMenu" type="Control" parent="." unique_id=1968886789]
@@ -41,3 +43,6 @@ default_reticle = "uid://coqpusufa8a6k"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameWorld" unique_id=855967814]
 transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.4143037, 0, 28.736153, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
+environment = SubResource("Environment_iukft")
