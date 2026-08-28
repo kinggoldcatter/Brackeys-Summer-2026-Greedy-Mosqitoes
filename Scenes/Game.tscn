@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7qjgjuy2lvpy"]
+
+[node name="Game" type="Node3D" unique_id=837930261]
+
+[node name="MainMenu" type="Control" parent="." unique_id=1968886789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameUI" type="Control" parent="." unique_id=5389024]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameWorld" type="Node3D" parent="." unique_id=1204066649]
