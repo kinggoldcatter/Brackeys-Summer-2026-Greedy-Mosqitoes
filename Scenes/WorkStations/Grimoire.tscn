@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://dms0kd3f2eigi"]
+
+[ext_resource type="Script" uid="uid://csd8w3ugx13dm" path="res://Scripts/WorkStations/page.gd" id="1_o546s"]
+[ext_resource type="PackedScene" uid="uid://cc7hwxab6pc1s" path="res://Scenes/Slider.tscn" id="2_o546s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o546s"]
+size = Vector3(1, 1, 0.05102539)
+
+[sub_resource type="QuadMesh" id="QuadMesh_dxtnk"]
+lightmap_size_hint = Vector2i(7, 7)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fgofq"]
+viewport_path = NodePath("Page/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kldst"]
+resource_local_to_scene = true
+transparency = 1
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_fgofq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o546s"]
+size = Vector3(1, 1.0019531, 0.036010742)
+
+[node name="Grimoire" type="Node3D" unique_id=862377441]
+process_mode = 3
+
+[node name="Page" type="MeshInstance3D" parent="." unique_id=1812934071]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4744873)
+mesh = SubResource("BoxMesh_o546s")
+script = ExtResource("1_o546s")
+
+[node name="ContentQuad" type="MeshInstance3D" parent="Page" unique_id=1971518754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.037855744)
+mesh = SubResource("QuadMesh_dxtnk")
+surface_material_override/0 = SubResource("StandardMaterial3D_kldst")
+
+[node name="MouseDetector" type="Area3D" parent="Page/ContentQuad" unique_id=197551716]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Page/ContentQuad/MouseDetector" unique_id=575826510]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0009765625, -0.016662598)
+shape = SubResource("BoxShape3D_o546s")
+
+[node name="SubViewport" type="SubViewport" parent="Page" unique_id=599588801]
+gui_embed_subwindows = true
+size = Vector2i(520, 520)
+
+[node name="Node2D" parent="Page/SubViewport" unique_id=1424831270 instance=ExtResource("2_o546s")]
+
+[node name="Page2" type="MeshInstance3D" parent="." unique_id=1503220486]
+transform = Transform3D(0.9850583, 0, 0.17222124, 0, 1, 0, -0.17222124, 0, 0.9850583, -1.0224204, 0, -0.37733102)
+mesh = SubResource("BoxMesh_o546s")

@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://caj080pykvjpl"]
+
+[node name="Node2D" type="Node2D" unique_id=251882095]
+modulate = Color(0.0020666122, 0, 1, 1)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=429880]
+offset_right = 9.0
+offset_bottom = 6.0
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1098651366]
+offset_left = 13.0
+offset_top = 10.0
+offset_right = 22.0
+offset_bottom = 16.0
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=809280620]
+offset_left = 28.0
+offset_top = 19.0
+offset_right = 37.0
+offset_bottom = 25.0
