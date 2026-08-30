@@ -5,3 +5,10 @@ extends Node3D
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	look_at(player.global_position)
+
+func  _ready() -> void:
+	GameState.deamon_summoned.connect(on_deamon_summoned)
+	
+
+func on_deamon_summoned() -> void:
+	$"..".visible = true

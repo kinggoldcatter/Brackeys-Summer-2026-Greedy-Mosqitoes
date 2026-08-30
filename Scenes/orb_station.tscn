@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://pl4y5u2dg3pj" path="res://Scenes/orb.tscn" id="1_ah1ik"]
 [ext_resource type="Script" uid="uid://csd8w3ugx13dm" path="res://Scripts/WorkStations/page.gd" id="2_k7o43"]
 [ext_resource type="PackedScene" uid="uid://8qnu4lc5ia4c" path="res://Scenes/websites/browser.tscn" id="3_k7o43"]
+[ext_resource type="Script" uid="uid://6kx44tv1g2a8" path="res://Scenes/websites/text_edit.gd" id="4_m3vi7"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nry4h"]
 viewport_path = NodePath("Monitor/SubViewport")
@@ -44,3 +45,12 @@ gui_embed_subwindows = true
 size = Vector2i(640, 480)
 
 [node name="Browser" parent="Monitor/SubViewport" unique_id=607288629 instance=ExtResource("3_k7o43")]
+
+[node name="TextEdit" type="TextEdit" parent="Monitor/SubViewport" unique_id=1383596996]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 10
+placeholder_text = "Please Enter Site Name"
+script = ExtResource("4_m3vi7")

@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://8qnu4lc5ia4c"]
 
-[ext_resource type="Script" uid="uid://6kx44tv1g2a8" path="res://Scenes/websites/text_edit.gd" id="1_dhvk6"]
-
 [node name="Browser" type="Control" unique_id=607288629]
 layout_mode = 3
 anchors_preset = 15
@@ -18,19 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextEdit" type="TextEdit" parent="." unique_id=2044526818]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -74.0
-offset_bottom = 4.0
-grow_horizontal = 2
-grow_vertical = 2
-placeholder_text = "Please Enter Site Name"
-script = ExtResource("1_dhvk6")
-
 [node name="Label" type="Label" parent="." unique_id=1991362004]
 self_modulate = Color(0, 0.13343477, 1, 1)
 layout_mode = 1
@@ -44,4 +29,4 @@ offset_right = -25.0
 offset_bottom = -78.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "WIZBROWZ.ORB"
+text = "WIZBOWZ.OBB"

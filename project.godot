@@ -15,6 +15,10 @@ run/main_scene="uid://c7qjgjuy2lvpy"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 
+[autoload]
+
+GameState="*uid://lwcqks0nxfdt"
+
 [display]
 
 window/stretch/mode="canvas_items"
@@ -316,9 +320,9 @@ quit={
 "meta_pressed": false,
 "pressed": false,
 "keycode": 0,
-"physical_keycode": 4194305,
+"physical_keycode": 81,
 "key_label": 0,
-"unicode": 0,
+"unicode": 113,
 "location": 0,
 "echo": false,
 "script": null
