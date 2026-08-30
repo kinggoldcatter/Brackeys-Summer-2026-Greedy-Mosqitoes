@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Brackeys-Summer-2026-Greedy-Mosqitoes"
-run/main_scene="uid://c7qjgjuy2lvpy"
+run/main_scene="uid://co2qkl1vlkdr1"
 config/features=PackedStringArray("4.8", "GL Compatibility")
 config/icon="res://Sprites/icon.svg"
 

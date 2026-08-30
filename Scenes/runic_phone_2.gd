@@ -17,6 +17,7 @@ func input_num(num: String) -> void:
 			print("Correct Number")
 			phone_called.emit()
 			deamon_called = true
+			GameState.deamon_summoned.emit()
 		else:
 			print("lol bad at numbers")
 		phone_num = ""

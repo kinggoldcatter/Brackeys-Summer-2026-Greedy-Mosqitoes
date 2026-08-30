@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dms0kd3f2eigi"]
 
 [ext_resource type="Script" uid="uid://csd8w3ugx13dm" path="res://Scripts/WorkStations/page.gd" id="1_o546s"]
-[ext_resource type="PackedScene" uid="uid://cc7hwxab6pc1s" path="res://Scenes/Slider.tscn" id="2_o546s"]
+[ext_resource type="PackedScene" uid="uid://dknn2tupcfl1b" path="res://Scenes/Potion Demon Page.tscn" id="2_o546s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_o546s"]
 size = Vector3(1, 1, 0.05102539)
@@ -44,7 +44,7 @@ shape = SubResource("BoxShape3D_o546s")
 gui_embed_subwindows = true
 size = Vector2i(520, 520)
 
-[node name="Node2D" parent="Page/SubViewport" unique_id=1424831270 instance=ExtResource("2_o546s")]
+[node name="PotionDemonPage" parent="Page/SubViewport" unique_id=510307507 instance=ExtResource("2_o546s")]
 
 [node name="Page2" type="MeshInstance3D" parent="." unique_id=1503220486]
 transform = Transform3D(0.9850583, 0, 0.17222124, 0, 1, 0, -0.17222124, 0, 0.9850583, -1.0224204, 0, -0.37733102)
