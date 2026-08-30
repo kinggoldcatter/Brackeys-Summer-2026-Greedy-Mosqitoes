@@ -428,6 +428,8 @@ target_position = Vector3(0, 0, -2)
 [node name="Hand" type="Marker3D" parent="Head" unique_id=820124842]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head" unique_id=455038185]
+
 [node name="UserInterface" type="Control" parent="." unique_id=755504862]
 layout_mode = 3
 anchors_preset = 15

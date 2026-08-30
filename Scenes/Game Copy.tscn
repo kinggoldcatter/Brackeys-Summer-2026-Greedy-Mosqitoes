@@ -21,6 +21,7 @@
 [ext_resource type="Script" uid="uid://bv32d4bro6m5" path="res://Scenes/deamon_talk.gd" id="15_c6rl5"]
 [ext_resource type="Script" uid="uid://iki8l0ylruf7" path="res://Scenes/ings.gd" id="15_r1uwj"]
 [ext_resource type="Texture2D" uid="uid://yca2a8eo5586" path="res://Sprites/Ingredients/Gorgon's Venom.png" id="15_vr782"]
+[ext_resource type="AudioStream" uid="uid://diwbn8ccgrdye" path="res://Sounds/demon-summoning-in-latin-sound-effect-made-with-Voicemod.mp3" id="16_n2bct"]
 [ext_resource type="Texture2D" uid="uid://be3ny85ukgpqy" path="res://Sprites/Ingredients/Cursed Dead Sea Salt.png" id="16_nlbtg"]
 [ext_resource type="PackedScene" uid="uid://b4720x4i03mc6" path="res://Scenes/door_2.tscn" id="17_7iokb"]
 [ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_rcrtu"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://c0i52u3yfeckd" path="res://Textures/wall_brick_stone_center.png" id="21_aplya"]
 [ext_resource type="PackedScene" uid="uid://od5oe1h6gjn2" path="res://Models/ROOF.glb" id="22_dmsjh"]
 [ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="23_dwut8"]
+[ext_resource type="AudioStream" uid="uid://dcprsd8js0237" path="res://Sounds/dragon-studio-open-door-stock-sfx-454246.mp3" id="26_qu6gi"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -305,6 +307,9 @@ yhea I got the goods but first get a pot at
 www.culcalcaccau.wiz"
 script = ExtResource("15_c6rl5")
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameWorld/PotionStation/DeamonStuff" unique_id=794608737]
+stream = ExtResource("16_n2bct")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
 environment = SubResource("Environment_iukft")
 
@@ -373,6 +378,9 @@ script = ExtResource("18_rcrtu")
 [node name="VisibleOnScreenNotifier3D" parent="door2/InteractRegion" index="1" unique_id=238854571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591465, 2.515277, 0.44794035)
 aabb = AABB(-0.20192666, -2.280352, -1.2974601, 0.40385333, 3.4007044, 1.7249202)
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="door2" unique_id=563678640]
+stream = ExtResource("26_qu6gi")
 
 [node name="Wall Column" type="Node3D" parent="." unique_id=933317200]
 transform = Transform3D(0.41491327, 0, 0, 0, 3.285, 0, 0, 0, 16.367683, -7.0377154, 2.1269855, 0)

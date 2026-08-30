@@ -12,3 +12,4 @@ func  _ready() -> void:
 
 func on_deamon_summoned() -> void:
 	$"..".visible = true
+	$"../AudioStreamPlayer3D".play()
