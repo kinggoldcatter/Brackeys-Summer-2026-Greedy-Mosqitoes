@@ -1,7 +1,10 @@
 [gd_scene format=3 uid="uid://co2qkl1vlkdr1"]
 
 [ext_resource type="Script" uid="uid://cfqx8fgjp18og" path="res://Scenes/game_ui.gd" id="1_f0k0w"]
+[ext_resource type="AudioStream" uid="uid://cyiffyee4q14" path="res://Sounds/Main Theme.wav" id="2_d8p3j"]
+[ext_resource type="AudioStream" uid="uid://dlfb3mydq0s5t" path="res://Sounds/soundreality-explosion-fx-343683.mp3" id="2_nlbtg"]
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_nnxql"]
+[ext_resource type="AudioStream" uid="uid://dtfc04o5nwvqt" path="res://Sounds/freesound_community-negative-101682.mp3" id="2_vr782"]
 [ext_resource type="PackedScene" uid="uid://cltwm5pln7re4" path="res://Scenes/interact_region.tscn" id="3_aplya"]
 [ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="5_dwut8"]
 [ext_resource type="Material" uid="uid://dimpptaverfy8" path="res://Textures/Wood Planks.tres" id="5_nnxql"]
@@ -18,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dlqqsxysav42i" path="res://Sprites/Ingredients/Acidic Fission Spores.png" id="13_1hg13"]
 [ext_resource type="Script" uid="uid://cc2mqxxuj4ma8" path="res://Scenes/potion_demon_2.gd" id="13_mlq70"]
 [ext_resource type="Texture2D" uid="uid://d4fimorppoeuc" path="res://Sprites/Ingredients/Limescale's Bane.png" id="14_d8p3j"]
+[ext_resource type="AudioStream" uid="uid://c2q00mqlsqqke" path="res://Sounds/lazychillzone-cauldron-bubbling-1-232444.ogg" id="14_vr782"]
 [ext_resource type="Script" uid="uid://bv32d4bro6m5" path="res://Scenes/deamon_talk.gd" id="15_c6rl5"]
 [ext_resource type="Script" uid="uid://iki8l0ylruf7" path="res://Scenes/ings.gd" id="15_r1uwj"]
 [ext_resource type="Texture2D" uid="uid://yca2a8eo5586" path="res://Sprites/Ingredients/Gorgon's Venom.png" id="15_vr782"]
@@ -124,6 +128,9 @@ text = "It was actully a bomb recipe oops...
 press q to quit or r to restart"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameUI/TrueEnding" unique_id=438556685]
+stream = ExtResource("2_nlbtg")
+
 [node name="GoodEnding" type="Control" parent="GameUI" unique_id=218991230]
 visible = false
 layout_mode = 1
@@ -192,7 +199,16 @@ you should have not trusted that website!
 press q to quit or r to restart"
 horizontal_alignment = 1
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameUI/ScammedEnding" unique_id=1872682252]
+stream = ExtResource("2_vr782")
+
 [node name="GameWorld" type="Node3D" parent="." unique_id=1204066649]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameWorld" unique_id=1267294267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.368594, 1.1558747, -3.325333)
+stream = ExtResource("2_d8p3j")
+volume_db = -30.0
+autoplay = true
 
 [node name="Floor" type="Node3D" parent="GameWorld" unique_id=555609198]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -291,6 +307,9 @@ script = ExtResource("8_mlq70")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/PotionStation/Cauldron2/PotionGoop/Area3D" unique_id=1130236702]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20556629, 0)
 shape = SubResource("BoxShape3D_n2bct")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameWorld/PotionStation/Cauldron2/PotionGoop" unique_id=1502386190]
+stream = ExtResource("14_vr782")
 
 [node name="DeamonStuff" type="Node3D" parent="GameWorld/PotionStation" unique_id=1858946278]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)

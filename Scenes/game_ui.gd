@@ -12,3 +12,4 @@ func _process(delta: float) -> void:
 
 func on_got_scammed() -> void:
 	$ScammedEnding.visible = true
+	

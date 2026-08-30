@@ -33,4 +33,3 @@ func _process(delta: float) -> void:
 			current_site = new_site
 			move_to_front()
 		text = ""
-		

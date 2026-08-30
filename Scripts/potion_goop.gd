@@ -10,4 +10,6 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		ing_count += 1
 		if ing_count == 6 :
 			%TrueEnding.visible = true
-		
+			$"../../../../GameUI/TrueEnding/AudioStreamPlayer3D".play()
+		else :
+			$AudioStreamPlayer3D.play()
