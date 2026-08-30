@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://djha0bq6thfwk"]
+
+[ext_resource type="AudioStream" uid="uid://cyiffyee4q14" path="res://Sounds/Main Theme.wav" id="1_fnn4p"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1991642143]
+stream = ExtResource("1_fnn4p")
+volume_db = -17.333
+autoplay = true
