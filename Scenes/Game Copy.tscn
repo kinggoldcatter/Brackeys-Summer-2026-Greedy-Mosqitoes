@@ -314,7 +314,6 @@ stream = ExtResource("16_n2bct")
 environment = SubResource("Environment_iukft")
 
 [node name="Ings" type="Node3D" parent="." unique_id=1777905467]
-visible = false
 script = ExtResource("15_r1uwj")
 
 [node name="Wine" parent="Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
@@ -350,14 +349,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 
 texture = ExtResource("14_d8p3j")
 
 [node name="GorgonVenom" parent="Ings" unique_id=972454102 groups=["ing"] instance=ExtResource("10_c6rl5")]
-transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -2.2340388, 1.4442077, -7.8046017)
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -3.9701073, 1.4442077, -1.9406531)
 color = Color(0.2627451, 0.28627452, 0.25490198, 1)
 
-[node name="CollisionShape3D" parent="Ings/GorgonVenom" index="0" unique_id=953621575]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44952, -0.004119873, -3.9232814)
-
 [node name="Sprite3D" parent="Ings/GorgonVenom" index="1" unique_id=47357238]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.44952, -0.004119873, -3.9232814)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("15_vr782")
 
 [node name="CursedDeadSeaSalt" parent="Ings" unique_id=1277645699 groups=["ing"] instance=ExtResource("10_c6rl5")]
@@ -421,7 +417,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n01tu")
 [node name="ROOF" parent="." unique_id=1106187539 instance=ExtResource("22_dmsjh")]
 transform = Transform3D(4.6714344, 0, 0, 0, 4.315, 0, 0, 0, 4.7037034, -2.7935543, 0.49999905, -0.054704666)
 
-[node name="Cylinder" parent="ROOF" index="0" unique_id=1197039001]
+[node name="Cylinder" parent="ROOF" index="0" unique_id=1963000129]
 transform = Transform3D(2.9073055, 0, 1.8825749, 0, 2.2290516, 0, -1.846392, 0, 2.9642775, 0.13384461, 0, 0.14500484)
 surface_material_override/0 = SubResource("StandardMaterial3D_jmx1d")
 
