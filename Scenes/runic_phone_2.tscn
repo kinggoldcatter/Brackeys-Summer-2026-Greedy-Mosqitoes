@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dp5hl74s0gob6"]
+
+[ext_resource type="PackedScene" uid="uid://kswfjhlcen6" path="res://Models/Runic Phone.glb" id="1_u04ys"]
+
+[node name="Runic Phone2" unique_id=137542426 instance=ExtResource("1_u04ys")]
+
+[node name="Runic Phone" parent="." index="0" unique_id=1438863196]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)

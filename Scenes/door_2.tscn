@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://b4720x4i03mc6"]
+
+[ext_resource type="PackedScene" uid="uid://cas4aatxu8old" path="res://Models/door.glb" id="1_ffi2w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ygyw2"]
+albedo_color = Color(0.359375, 0.22127132, 0.12445611, 1)
+
+[sub_resource type="TorusMesh" id="TorusMesh_dxtnk"]
+inner_radius = 0.022
+outer_radius = 0.043
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dxtnk"]
+albedo_color = Color(0.234375, 0.234375, 0.234375, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ffi2w"]
+size = Vector3(0.010848999, 0.079711914, 0.048675537)
+
+[node name="door2" unique_id=1566743359 instance=ExtResource("1_ffi2w")]
+
+[node name="door" parent="." index="0" unique_id=1449465628]
+material_override = SubResource("StandardMaterial3D_ygyw2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1" unique_id=806989340]
+transform = Transform3D(0.29125625, 0.9566451, 0, -0.9566451, 0.29125625, 0, 0, 0, 1, 0.08963697, 0.21159369, 0.15177354)
+mesh = SubResource("TorusMesh_dxtnk")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxtnk")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="2" unique_id=1960680199]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073804855, 0.22475523, 0.1520687)
+mesh = SubResource("BoxMesh_ffi2w")
+surface_material_override/0 = SubResource("StandardMaterial3D_dxtnk")

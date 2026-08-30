@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cltwm5pln7re4"]
+
+[ext_resource type="Script" uid="uid://pv5fg4e5u406" path="res://Scripts/WorkStations/interact_region.gd" id="1_55vqp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kldst"]
+size = Vector3(3.344162, 3.0024414, 4.472046)
+
+[node name="InteractRegion" type="Area3D" unique_id=389112560]
+script = ExtResource("1_55vqp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1151808112]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.038154602, 1.4819403, -0.047668457)
+shape = SubResource("BoxShape3D_kldst")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="." unique_id=238854571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0531569, 0.5995655)
+aabb = AABB(-1, -1, -1, 2, 0.84, 1.13)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="screen_entered" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier3D" to="." method="_on_visible_on_screen_notifier_3d_screen_exited"]
