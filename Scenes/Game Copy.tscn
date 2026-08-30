@@ -91,6 +91,7 @@ grow_vertical = 2
 script = ExtResource("1_f0k0w")
 
 [node name="TrueEnding" type="Control" parent="GameUI" unique_id=1281227956]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 15

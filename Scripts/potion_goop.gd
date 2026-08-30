@@ -9,5 +9,5 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 		body.queue_free()
 		ing_count += 1
 		if ing_count == 6 :
-			$"../../../GameUI/TrueEnding".visible = true
+			%TrueEnding.visible = true
 		
