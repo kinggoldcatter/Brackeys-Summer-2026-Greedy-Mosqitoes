@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dknn2tupcfl1b"]
+
+[ext_resource type="Texture2D" uid="uid://1x1vlskvo08o" path="res://Sprites/Page Background.png" id="1_ikev1"]
+[ext_resource type="FontFile" uid="uid://7i360iq0f3l0" path="res://CursiveAmber-E4m1j.ttf" id="2_maryj"]
+[ext_resource type="Texture2D" uid="uid://crjvn0lyka2gf" path="res://Sprites/Runes/Rune-4.png" id="3_cdybc"]
+[ext_resource type="Texture2D" uid="uid://bu1fv87y3i1qr" path="res://Sprites/Runes/Rune-5.png" id="4_px7fk"]
+[ext_resource type="Texture2D" uid="uid://cca58ssdad1pa" path="res://Sprites/Runes/Rune-6.png" id="5_hvdtt"]
+[ext_resource type="Texture2D" uid="uid://duy77g5j8uf4n" path="res://Sprites/Runes/Rune-9.png" id="6_wwhh0"]
+[ext_resource type="Texture2D" uid="uid://1vdghqca0dk8" path="res://Sprites/Runes/Rune-8.png" id="7_53suo"]
+[ext_resource type="Texture2D" uid="uid://4kg1rfm574c7" path="res://Sprites/Runes/Rune-2.png" id="8_h8e6l"]
+
+[node name="PotionDemonPage" type="Node2D" unique_id=510307507]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1777207279]
+texture_filter = 1
+texture = ExtResource("1_ikev1")
+centered = false
+
+[node name="Label" type="Label" parent="." unique_id=1446593592]
+custom_maximum_size = Vector2(520, 520)
+offset_right = 520.0
+offset_bottom = 432.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 12
+theme_override_fonts/font = ExtResource("2_maryj")
+theme_override_font_sizes/font_size = 27
+text = "Legend tells of a demon by the name Maxine Veleno who was renowned as the greatest potions master in all the 9 hells. This title was earned by being the first to manage a potion of immoritality. This tome is ment to help you by assisting you with your own journey to immortality by doxxing the hell out of them and giving you their number."
+autowrap_mode = 2
+
+[node name="Rune4" type="Sprite2D" parent="." unique_id=21718561]
+texture_filter = 1
+position = Vector2(31.52, 467.52)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("3_cdybc")
+
+[node name="Rune5" type="Sprite2D" parent="." unique_id=1370063420]
+texture_filter = 1
+position = Vector2(89.520004, 468.52)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("4_px7fk")
+
+[node name="Rune6" type="Sprite2D" parent="." unique_id=232722701]
+texture_filter = 1
+position = Vector2(143.52, 468.52)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("5_hvdtt")
+
+[node name="Rune9" type="Sprite2D" parent="." unique_id=827495532]
+texture_filter = 1
+position = Vector2(200.52, 468.52)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("6_wwhh0")
+
+[node name="Rune8" type="Sprite2D" parent="." unique_id=690995337]
+texture_filter = 1
+position = Vector2(256.52, 470.52002)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("7_53suo")
+
+[node name="Rune2" type="Sprite2D" parent="." unique_id=994029439]
+texture_filter = 1
+position = Vector2(316.52002, 468.52002)
+scale = Vector2(3.19, 3.19)
+texture = ExtResource("8_h8e6l")

@@ -1,0 +1,360 @@
+[gd_scene format=3 uid="uid://co2qkl1vlkdr1"]
+
+[ext_resource type="Script" uid="uid://cfqx8fgjp18og" path="res://Scenes/game_ui.gd" id="1_f0k0w"]
+[ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_nnxql"]
+[ext_resource type="PackedScene" uid="uid://cltwm5pln7re4" path="res://Scenes/interact_region.tscn" id="3_aplya"]
+[ext_resource type="Script" uid="uid://cvpwkiunhnv3m" path="res://Scripts/interact_region.gd" id="4_dmsjh"]
+[ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="5_dwut8"]
+[ext_resource type="Material" uid="uid://dimpptaverfy8" path="res://Textures/Wood Planks.tres" id="5_nnxql"]
+[ext_resource type="PackedScene" uid="uid://dgv4f4tyrgno" path="res://Models/Logs.glb" id="6_0w5v7"]
+[ext_resource type="PackedScene" uid="uid://b418dcxl4e56e" path="res://Models/Tent.glb" id="7_2wbel"]
+[ext_resource type="Script" uid="uid://dwt3o3olykw6j" path="res://Scripts/potion_goop.gd" id="8_mlq70"]
+[ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://fpc/character.tscn" id="9_r1uwj"]
+[ext_resource type="PackedScene" uid="uid://blnpx3yso7axk" path="res://Scenes/ingredient.tscn" id="10_c6rl5"]
+[ext_resource type="Texture2D" uid="uid://bs0qgdjxrgc65" path="res://Sprites/Ingredients/Wine.png" id="11_qu6gi"]
+[ext_resource type="Texture2D" uid="uid://d4i0ga8sxdopm" path="res://Sprites/Ingredients/Sour Wine.png" id="12_n2bct"]
+[ext_resource type="Texture2D" uid="uid://dlqqsxysav42i" path="res://Sprites/Ingredients/Acidic Fission Spores.png" id="13_1hg13"]
+[ext_resource type="Texture2D" uid="uid://d4fimorppoeuc" path="res://Sprites/Ingredients/Limescale's Bane.png" id="14_d8p3j"]
+[ext_resource type="Texture2D" uid="uid://yca2a8eo5586" path="res://Sprites/Ingredients/Gorgon's Venom.png" id="15_vr782"]
+[ext_resource type="Texture2D" uid="uid://be3ny85ukgpqy" path="res://Sprites/Ingredients/Cursed Dead Sea Salt.png" id="16_nlbtg"]
+[ext_resource type="PackedScene" uid="uid://b4720x4i03mc6" path="res://Scenes/door_2.tscn" id="17_7iokb"]
+[ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_rcrtu"]
+[ext_resource type="PackedScene" uid="uid://dp5hl74s0gob6" path="res://Scenes/runic_phone_2.tscn" id="19_s6jed"]
+[ext_resource type="Texture2D" uid="uid://c0i52u3yfeckd" path="res://Textures/wall_brick_stone_center.png" id="21_aplya"]
+[ext_resource type="PackedScene" uid="uid://od5oe1h6gjn2" path="res://Models/ROOF.glb" id="22_dmsjh"]
+[ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="23_dwut8"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
+size = Vector3(30, 30, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mtjto"]
+size = Vector3(30, 1, 30)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bf53h"]
+size = Vector3(1, 0.60546875, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_alh3a"]
+albedo_color = Color(0.052175388, 0.2039982, 0.53515625, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dxtnk"]
+top_radius = 0.296875
+bottom_radius = 0.296875
+height = 0.1619873
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71axn"]
+size = Vector3(1, 0.5888672, 1)
+
+[sub_resource type="Environment" id="Environment_iukft"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aplya"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dmsjh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n01tu"]
+albedo_texture = ExtResource("21_aplya")
+uv1_scale = Vector3(15, 1, 1)
+texture_filter = 0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jmx1d"]
+albedo_texture = ExtResource("23_dwut8")
+uv1_scale = Vector3(9.645, 9.645, 9.645)
+texture_filter = 0
+
+[node name="Game" type="Node3D" unique_id=837930261]
+
+[node name="MainMenu" type="Control" parent="." unique_id=1968886789]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GameUI" type="Control" parent="." unique_id=5389024]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_f0k0w")
+
+[node name="TrueEnding" type="Control" parent="GameUI" unique_id=927603915]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameUI/TrueEnding" unique_id=1389880343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GameUI/TrueEnding" unique_id=567758166]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "It was actully a bomb recipe oops...
+ you regret trusting that nasty book in your last moments of not being a stain on the floor
+press esc to quit or r to restart"
+horizontal_alignment = 1
+
+[node name="GoodEnding" type="Control" parent="GameUI" unique_id=129922203]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameUI/GoodEnding" unique_id=213026468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GameUI/GoodEnding" unique_id=24380194]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You walk outside and feel very ill as your body has an allergic reaction to all the magic trees and stuff out there
+you forget your dreams of imortallity while making another appointment to your allergy docter
+you regret trusting your immune system"
+horizontal_alignment = 1
+
+[node name="GameWorld" type="Node3D" parent="." unique_id=1204066649]
+
+[node name="BookStation" type="Node3D" parent="GameWorld" unique_id=2092422534]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 8.684299, 0, -0.3941126)
+
+[node name="Grimoire" parent="GameWorld/BookStation" unique_id=862377441 instance=ExtResource("2_nnxql")]
+transform = Transform3D(-0.99933875, -7.450581e-09, 0.036360443, 0.035995323, 0.14135927, 0.98930365, -0.005139891, 0.98995835, -0.14126578, -0.5933198, 2.0098655, -4.9344015)
+
+[node name="Camera3D" type="Camera3D" parent="GameWorld/BookStation" unique_id=449507191]
+transform = Transform3D(-1, 8.940697e-08, 3.996803e-15, 0, -4.371139e-08, 1, 8.940697e-08, 1, 4.371139e-08, -0.076520234, 2.703679, -4.8607817)
+
+[node name="InteractRegion" parent="GameWorld/BookStation" unique_id=389112560 instance=ExtResource("3_aplya")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14073494, 4.7683716e-07, -5.0997734)
+script = ExtResource("4_dmsjh")
+
+[node name="Floor" type="Node3D" parent="GameWorld" unique_id=555609198]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="FloorMesh" type="MeshInstance3D" parent="GameWorld/Floor" unique_id=1660256763]
+transform = Transform3D(0.5743243, 1.7763568e-15, 0, 0, -2.0569003e-08, -1, 0, 0.4705639, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("5_nnxql")
+mesh = SubResource("PrismMesh_dxtnk")
+
+[node name="FloorCollider" type="StaticBody3D" parent="GameWorld/Floor" unique_id=1639363484]
+
+[node name="FloorShape" type="CollisionShape3D" parent="GameWorld/Floor/FloorCollider" unique_id=1193896998]
+shape = SubResource("BoxShape3D_mtjto")
+
+[node name="PotionStation" type="Node3D" parent="GameWorld" unique_id=988357728]
+transform = Transform3D(0.84890026, 0, -0.528553, 0, 1, 0, 0.528553, 0, 0.84890026, -9.080641, -0.29443187, 2.1062822)
+
+[node name="Cauldron2" parent="GameWorld/PotionStation" unique_id=1185327369 instance=ExtResource("5_dwut8")]
+transform = Transform3D(0.9538421, 0, 0.30030972, 0, 1, 0, -0.30030972, 0, 0.9538421, 5.029164, 0.78392255, -1.7883549)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="GameWorld/PotionStation/Cauldron2" unique_id=1720982918]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/PotionStation/Cauldron2/RigidBody3D" unique_id=974356842]
+shape = SubResource("BoxShape3D_bf53h")
+
+[node name="Logs2" parent="GameWorld/PotionStation" unique_id=1663159580 instance=ExtResource("6_0w5v7")]
+transform = Transform3D(0.9538421, 0, 0.30030972, 0, 1, 0, -0.30030972, 0, 0.9538421, 5.029164, 0.78392255, -1.7883549)
+
+[node name="Tent" parent="GameWorld/PotionStation" unique_id=340089939 instance=ExtResource("7_2wbel")]
+transform = Transform3D(0.9538421, 0, 0.30030972, 0, 1, 0, -0.30030972, 0, 0.9538421, 4.998355, 0.78392303, -1.4921789)
+
+[node name="PotionGoop" type="MeshInstance3D" parent="GameWorld/PotionStation" unique_id=1353249982]
+transform = Transform3D(0.9538421, 0, 0.30030972, 0, 1, 0, -0.30030972, 0, 0.9538421, 5.029164, 1.5812042, -1.7883549)
+material_override = SubResource("StandardMaterial3D_alh3a")
+mesh = SubResource("CylinderMesh_dxtnk")
+script = ExtResource("8_mlq70")
+
+[node name="Area3D" type="Area3D" parent="GameWorld/PotionStation/PotionGoop" unique_id=1988625761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/PotionStation/PotionGoop/Area3D" unique_id=1653731324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20556629, 0)
+shape = SubResource("BoxShape3D_71axn")
+
+[node name="Character" parent="GameWorld" unique_id=1664366571 groups=["the_player"] instance=ExtResource("9_r1uwj")]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.1384766, 0.7590823, -0.073530436)
+default_reticle = "uid://coqpusufa8a6k"
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="GameWorld" unique_id=855967814]
+transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.4143037, 0, 28.736153, 0)
+
+[node name="Node3D" type="Node3D" parent="GameWorld" unique_id=611116547]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
+environment = SubResource("Environment_iukft")
+
+[node name="Wine" parent="." unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 5.1010265, 1.14569, -3.6337585)
+color = Color(0.27450982, 0.003921569, 0.1882353, 1)
+
+[node name="CollisionShape3D" parent="Wine" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5809772, -0.004119873, -5.4210386)
+
+[node name="Sprite3D" parent="Wine" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5760031, 0, -5.425456)
+texture = ExtResource("11_qu6gi")
+
+[node name="SourWine" parent="." unique_id=737213318 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 1.5595365, 1.4442067, -5.769145)
+color = Color(0.9411765, 0.83137256, 0.4392157, 1)
+
+[node name="CollisionShape3D" parent="SourWine" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58097696, -0.004119873, -5.4210386)
+
+[node name="Sprite3D" parent="SourWine" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5760026, 0, -5.425456)
+texture = ExtResource("12_n2bct")
+
+[node name="AcidicFissionSpores" parent="." unique_id=233733413 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 6.6882534, 1.4442077, -2.7429085)
+color = Color(0.79607844, 1, 0.72156864, 1)
+
+[node name="CollisionShape3D" parent="AcidicFissionSpores" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58097756, -0.004119873, -5.4210386)
+
+[node name="Sprite3D" parent="AcidicFissionSpores" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5760031, 0, -5.425456)
+texture = ExtResource("13_1hg13")
+
+[node name="Limescale\'sBane" parent="." unique_id=476906863 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -1.1041107, 1.4442077, -6.762516)
+color = Color(1, 0.9411765, 0.9882353, 1)
+
+[node name="CollisionShape3D" parent="Limescale\'sBane" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0744705, -0.18309021, -1.4674183)
+
+[node name="Sprite3D" parent="Limescale\'sBane" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.069497, -0.17897034, -1.4718362)
+texture = ExtResource("14_d8p3j")
+
+[node name="GorgonVenom" parent="." unique_id=972454102 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -2.2340388, 1.4442077, -7.8046017)
+color = Color(0.2627451, 0.28627452, 0.25490198, 1)
+
+[node name="CollisionShape3D" parent="GorgonVenom" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0744724, -0.18309021, -1.4674187)
+
+[node name="Sprite3D" parent="GorgonVenom" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.069498, -0.17897034, -1.4718359)
+texture = ExtResource("15_vr782")
+
+[node name="CursedDeadSeaSalt" parent="." unique_id=1277645699 groups=["ing"] instance=ExtResource("10_c6rl5")]
+transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 3.3194015, 1.4442077, -4.6141205)
+color = Color(0.039215688, 0, 0.039215688, 1)
+
+[node name="CollisionShape3D" parent="CursedDeadSeaSalt" index="0" unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.58097744, -0.004119873, -5.421038)
+
+[node name="Sprite3D" parent="CursedDeadSeaSalt" index="1" unique_id=47357238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5760033, 0, -5.4254556)
+texture = ExtResource("16_nlbtg")
+
+[node name="door2" parent="." unique_id=1566743359 instance=ExtResource("17_7iokb")]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -6.293316, 0.59691143, 0)
+
+[node name="InteractRegion" parent="door2" unique_id=1510606781 instance=ExtResource("3_aplya")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.16404867, -0.119382285, 0)
+script = ExtResource("18_rcrtu")
+
+[node name="VisibleOnScreenNotifier3D" parent="door2/InteractRegion" index="1" unique_id=238854571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591465, 2.515277, 0.44794035)
+aabb = AABB(-0.20192666, -2.280352, -1.2974601, 0.40385333, 3.4007044, 1.7249202)
+
+[node name="Runic Phone2" parent="." unique_id=137542426 instance=ExtResource("19_s6jed")]
+transform = Transform3D(4.6021657, 0, 1.9544997, 0, 5, 0, -1.9544997, 0, 4.6021657, 0.13876486, 0.50485235, 2.7702646)
+
+[node name="Wall Column" type="Node3D" parent="." unique_id=933317200]
+transform = Transform3D(0.41491327, 0, 0, 0, 3.285, 0, 0, 0, 16.367683, -7.0377154, 2.1269855, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall Column" unique_id=1621844002]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Column/StaticBody3D" unique_id=651489271]
+shape = SubResource("BoxShape3D_aplya")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall Column" unique_id=1821530969]
+mesh = SubResource("BoxMesh_dmsjh")
+surface_material_override/0 = SubResource("StandardMaterial3D_n01tu")
+
+[node name="Wall Column2" type="Node3D" parent="." unique_id=419980068]
+transform = Transform3D(0.20745662, 0, 14.17483, 0, 3.285, 0, -0.35932544, 0, 8.183841, 0.19565248, 2.1269855, -3.8736143)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall Column2" unique_id=1771489082]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Column2/StaticBody3D" unique_id=1535471224]
+shape = SubResource("BoxShape3D_aplya")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall Column2" unique_id=912547368]
+mesh = SubResource("BoxMesh_dmsjh")
+surface_material_override/0 = SubResource("StandardMaterial3D_n01tu")
+
+[node name="Wall Column3" type="Node3D" parent="." unique_id=1046962754]
+transform = Transform3D(0.20745662, 0, -14.17483, 0, 3.285, 0, 0.35932544, 0, 8.183841, 0.22606444, 2.1269853, 4.1103444)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall Column3" unique_id=1396100695]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Column3/StaticBody3D" unique_id=2053285885]
+shape = SubResource("BoxShape3D_aplya")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall Column3" unique_id=554304318]
+mesh = SubResource("BoxMesh_dmsjh")
+surface_material_override/0 = SubResource("StandardMaterial3D_n01tu")
+
+[node name="ROOF" parent="." unique_id=1106187539 instance=ExtResource("22_dmsjh")]
+transform = Transform3D(4.6714344, 0, 0, 0, 4.315, 0, 0, 0, 4.7037034, -2.7935543, 0.49999905, -0.054704666)
+
+[node name="Cylinder" parent="ROOF" index="0" unique_id=1197039001]
+transform = Transform3D(2.9073055, 0, 1.8825749, 0, 2.2290516, 0, -1.846392, 0, 2.9642775, 0.13384461, 0, 0.14500484)
+surface_material_override/0 = SubResource("StandardMaterial3D_jmx1d")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=496776993]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8282342, 0.7438309, 3.1833308)
+light_color = Color(1, 0.5390901, 0.118986905, 1)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1609767603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.658375, 1.2303689, 0)
+light_color = Color(1, 0, 0.00740242, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1973729867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8477795, 9.260601, -0.7426381)
+light_color = Color(0, 0.9249182, 1, 1)
+
+[connection signal="body_entered" from="GameWorld/PotionStation/PotionGoop/Area3D" to="GameWorld/PotionStation/PotionGoop" method="_on_area_3d_body_entered"]
+
+[editable path="Wine"]
+[editable path="SourWine"]
+[editable path="AcidicFissionSpores"]
+[editable path="Limescale\'sBane"]
+[editable path="GorgonVenom"]
+[editable path="CursedDeadSeaSalt"]
+[editable path="door2/InteractRegion"]
+[editable path="ROOF"]
