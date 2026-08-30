@@ -413,7 +413,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_n01tu")
 [node name="ROOF" parent="." unique_id=1106187539 instance=ExtResource("22_dmsjh")]
 transform = Transform3D(4.6714344, 0, 0, 0, 4.315, 0, 0, 0, 4.7037034, -2.7935543, 0.49999905, -0.054704666)
 
-[node name="Cylinder" parent="ROOF" index="0" unique_id=1963000129]
+[node name="Cylinder" parent="ROOF" index="0" unique_id=1197039001]
 transform = Transform3D(2.9073055, 0, 1.8825749, 0, 2.2290516, 0, -1.846392, 0, 2.9642775, 0.13384461, 0, 0.14500484)
 surface_material_override/0 = SubResource("StandardMaterial3D_jmx1d")
 

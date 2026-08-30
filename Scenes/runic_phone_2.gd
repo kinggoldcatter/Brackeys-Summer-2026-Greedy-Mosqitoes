@@ -6,7 +6,7 @@ signal phone_called
 var deamon_called: bool = false
 
 const PHONE_NUM_LEN: int = 6
-const CORRECT_PHONE_NUM: String = "456982"
+const CORRECT_PHONE_NUM: String = "456972"
 
 var phone_num: String = ""
 
