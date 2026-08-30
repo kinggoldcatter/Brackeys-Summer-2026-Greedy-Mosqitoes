@@ -52,6 +52,7 @@ efforts of estimed potion's
 master, Maxine Veleno"
 
 [node name="Label6" type="Label" parent="." unique_id=1607812428]
+custom_maximum_size = Vector2(640, 480)
 offset_left = -1.0
 offset_top = -83.0
 offset_right = 639.0
