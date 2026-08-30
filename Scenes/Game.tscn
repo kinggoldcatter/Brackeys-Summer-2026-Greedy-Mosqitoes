@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfqx8fgjp18og" path="res://Scenes/game_ui.gd" id="1_acvyw"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://fpc/character.tscn" id="1_iukft"]
+[ext_resource type="Script" uid="uid://c32ysc0kwltwc" path="res://Scenes/quest_manager.gd" id="1_vvhu1"]
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://cltwm5pln7re4" path="res://Scenes/interact_region.tscn" id="3_alh3a"]
 [ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="4_7lihs"]
@@ -12,7 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://blnpx3yso7axk" path="res://Scenes/ingredient.tscn" id="7_fgofq"]
 [ext_resource type="Texture2D" uid="uid://bs0qgdjxrgc65" path="res://Sprites/Ingredients/Wine.png" id="9_71axn"]
 [ext_resource type="Texture2D" uid="uid://d4i0ga8sxdopm" path="res://Sprites/Ingredients/Sour Wine.png" id="9_bf53h"]
+[ext_resource type="PackedScene" uid="uid://p5atsfw0mtrl" path="res://Scenes/potion_demon_2.tscn" id="9_rajel"]
 [ext_resource type="Texture2D" uid="uid://dlqqsxysav42i" path="res://Sprites/Ingredients/Acidic Fission Spores.png" id="10_3cx6b"]
+[ext_resource type="Script" uid="uid://cc2mqxxuj4ma8" path="res://Scenes/potion_demon_2.gd" id="10_vvhu1"]
 [ext_resource type="Texture2D" uid="uid://d4fimorppoeuc" path="res://Sprites/Ingredients/Limescale's Bane.png" id="11_wxwew"]
 [ext_resource type="Texture2D" uid="uid://yca2a8eo5586" path="res://Sprites/Ingredients/Gorgon's Venom.png" id="12_acvyw"]
 [ext_resource type="Texture2D" uid="uid://be3ny85ukgpqy" path="res://Sprites/Ingredients/Cursed Dead Sea Salt.png" id="13_alh3a"]
@@ -42,7 +45,13 @@ size = Vector3(1, 0.5888672, 1)
 
 [sub_resource type="Environment" id="Environment_iukft"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8r6kd"]
+size = Vector3(0.6751821, 0.3110469, 0.775959)
+
 [node name="Game" type="Node3D" unique_id=837930261]
+
+[node name="QuestManager" type="Node" parent="." unique_id=41170363]
+script = ExtResource("1_vvhu1")
 
 [node name="MainMenu" type="Control" parent="." unique_id=1968886789]
 layout_mode = 3
@@ -152,7 +161,13 @@ mesh = SubResource("PrismMesh_dxtnk")
 shape = SubResource("BoxShape3D_mtjto")
 
 [node name="PotionStation" type="Node3D" parent="GameWorld" unique_id=988357728]
-transform = Transform3D(0.84890026, 0, -0.528553, 0, 1, 0, 0.528553, 0, 0.84890026, -9.080641, -0.29443187, 2.1062822)
+transform = Transform3D(0.88219047, 0, 0.47089276, 0, 1, 0, -0.47089276, 0, 0.88219047, -0.5250578, -0.29443187, 5.392921)
+
+[node name="Logs2" parent="GameWorld/PotionStation" unique_id=1663159580 instance=ExtResource("5_fgofq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
+
+[node name="Tent" parent="GameWorld/PotionStation" unique_id=340089939 instance=ExtResource("6_2irst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
 
 [node name="Cauldron2" parent="GameWorld/PotionStation" unique_id=1185327369 instance=ExtResource("4_7lihs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
@@ -161,12 +176,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/PotionStation/Cauldron2/RigidBody3D" unique_id=974356842]
 shape = SubResource("BoxShape3D_bf53h")
-
-[node name="Logs2" parent="GameWorld/PotionStation" unique_id=1663159580 instance=ExtResource("5_fgofq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
-
-[node name="Tent" parent="GameWorld/PotionStation" unique_id=340089939 instance=ExtResource("6_2irst")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
 
 [node name="PotionGoop" type="MeshInstance3D" parent="GameWorld/PotionStation" unique_id=1353249982]
 transform = Transform3D(1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000002, 0, 1.5812049, 0)
@@ -179,6 +188,14 @@ script = ExtResource("6_wxwew")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GameWorld/PotionStation/PotionGoop/Area3D" unique_id=1653731324]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20556629, 0)
 shape = SubResource("BoxShape3D_71axn")
+
+[node name="DeamonStuff" type="Node3D" parent="GameWorld/PotionStation" unique_id=1250434338]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
+visible = false
+
+[node name="Potion Demon2" parent="GameWorld/PotionStation/DeamonStuff" unique_id=653429702 instance=ExtResource("9_rajel")]
+transform = Transform3D(-0.6079972, 0, 0.7939392, 0, 1, 0, -0.7939392, 0, -0.6079972, 0.023745991, 2.4744241, 0.031008163)
+script = ExtResource("10_vvhu1")
 
 [node name="Character" parent="GameWorld" unique_id=1664366571 groups=["the_player"] instance=ExtResource("1_iukft")]
 unique_name_in_owner = true
@@ -193,46 +210,48 @@ transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.414
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
 environment = SubResource("Environment_iukft")
 
-[node name="Wine" parent="." unique_id=1289379313 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="Ings" type="Node3D" parent="." unique_id=1766959447]
+
+[node name="Wine" parent="Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 5.1010265, 1.14569, -3.6337585)
 color = Color(0.27450982, 0.003921569, 0.1882353, 1)
 
-[node name="Sprite3D" parent="Wine" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/Wine" index="1" unique_id=47357238]
 texture = ExtResource("9_71axn")
 
-[node name="SourWine" parent="." unique_id=737213318 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="SourWine" parent="Ings" unique_id=737213318 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 1.5595365, 1.4442067, -5.769145)
 color = Color(0.9411765, 0.83137256, 0.4392157, 1)
 
-[node name="Sprite3D" parent="SourWine" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/SourWine" index="1" unique_id=47357238]
 texture = ExtResource("9_bf53h")
 
-[node name="AcidicFissionSpores" parent="." unique_id=233733413 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="AcidicFissionSpores" parent="Ings" unique_id=233733413 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 6.6882534, 1.4442077, -2.7429085)
 color = Color(0.79607844, 1, 0.72156864, 1)
 
-[node name="Sprite3D" parent="AcidicFissionSpores" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/AcidicFissionSpores" index="1" unique_id=47357238]
 texture = ExtResource("10_3cx6b")
 
-[node name="Limescale\'sBane" parent="." unique_id=476906863 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="Limescale\'sBane" parent="Ings" unique_id=476906863 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -1.1041107, 1.4442077, -6.762516)
 color = Color(1, 0.9411765, 0.9882353, 1)
 
-[node name="Sprite3D" parent="Limescale\'sBane" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/Limescale\'sBane" index="1" unique_id=47357238]
 texture = ExtResource("11_wxwew")
 
-[node name="GorgonVenom" parent="." unique_id=972454102 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="GorgonVenom" parent="Ings" unique_id=972454102 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -2.2340388, 1.4442077, -7.8046017)
 color = Color(0.2627451, 0.28627452, 0.25490198, 1)
 
-[node name="Sprite3D" parent="GorgonVenom" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/GorgonVenom" index="1" unique_id=47357238]
 texture = ExtResource("12_acvyw")
 
-[node name="CursedDeadSeaSalt" parent="." unique_id=1277645699 groups=["ing"] instance=ExtResource("7_fgofq")]
+[node name="CursedDeadSeaSalt" parent="Ings" unique_id=1277645699 groups=["ing"] instance=ExtResource("7_fgofq")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, 3.3194015, 1.4442077, -4.6141205)
 color = Color(0.039215688, 0, 0.039215688, 1)
 
-[node name="Sprite3D" parent="CursedDeadSeaSalt" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="Ings/CursedDeadSeaSalt" index="1" unique_id=47357238]
 texture = ExtResource("13_alh3a")
 
 [node name="door2" parent="." unique_id=1566743359 instance=ExtResource("16_alh3a")]
@@ -249,12 +268,27 @@ aabb = AABB(-0.20192666, -2.280352, -1.2974601, 0.40385333, 3.4007044, 1.7249202
 [node name="Runic Phone2" parent="." unique_id=137542426 instance=ExtResource("17_4q8tf")]
 transform = Transform3D(4.6021657, 0, 1.9544997, 0, 5, 0, -1.9544997, 0, 4.6021657, 3.0039926, 0.50485235, 4.6590557)
 
-[connection signal="body_entered" from="GameWorld/PotionStation/PotionGoop/Area3D" to="GameWorld/PotionStation/PotionGoop" method="_on_area_3d_body_entered"]
+[node name="InteractRegion" parent="Runic Phone2" unique_id=712563483 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_alh3a")]
+station_cam = NodePath("../Camera3D")
 
-[editable path="Wine"]
-[editable path="SourWine"]
-[editable path="AcidicFissionSpores"]
-[editable path="Limescale\'sBane"]
-[editable path="GorgonVenom"]
-[editable path="CursedDeadSeaSalt"]
+[node name="CollisionShape3D" parent="Runic Phone2/InteractRegion" index="0" unique_id=1151808112]
+transform = Transform3D(0.9999999, 0, 2.9802322e-08, 0, 0.99999976, 0, -2.9802322e-08, 0, 0.9999999, 0.12158391, 0.13646375, -0.019552588)
+shape = SubResource("BoxShape3D_8r6kd")
+
+[node name="VisibleOnScreenNotifier3D" parent="Runic Phone2/InteractRegion" index="1" unique_id=238854571]
+aabb = AABB(-0.12357698, -2.118418, -0.7298039, 0.24715395, 0.22316426, 0.14442235)
+
+[node name="Camera3D" type="Camera3D" parent="Runic Phone2" unique_id=314814777]
+transform = Transform3D(-1, 7.673968e-08, -4.1877954e-08, 0, 0.47902796, 0.87779963, 8.742278e-08, 0.87779963, -0.47902796, 4.788462e-09, 0.18166715, -0.11466445)
+
+[connection signal="body_entered" from="GameWorld/PotionStation/PotionGoop/Area3D" to="GameWorld/PotionStation/PotionGoop" method="_on_area_3d_body_entered"]
+[connection signal="phone_called" from="Runic Phone2" to="QuestManager" method="_on_runic_phone_2_phone_called"]
+
+[editable path="Ings/Wine"]
+[editable path="Ings/SourWine"]
+[editable path="Ings/AcidicFissionSpores"]
+[editable path="Ings/Limescale\'sBane"]
+[editable path="Ings/GorgonVenom"]
+[editable path="Ings/CursedDeadSeaSalt"]
 [editable path="door2/InteractRegion"]
+[editable path="Runic Phone2/InteractRegion"]

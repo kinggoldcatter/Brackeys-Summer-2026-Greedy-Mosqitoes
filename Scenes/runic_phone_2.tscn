@@ -1,8 +1,98 @@
 [gd_scene format=3 uid="uid://dp5hl74s0gob6"]
 
 [ext_resource type="PackedScene" uid="uid://kswfjhlcen6" path="res://Models/Runic Phone.glb" id="1_u04ys"]
+[ext_resource type="Script" uid="uid://vohov7eyn1ue" path="res://Scenes/runic_phone_2.gd" id="2_xcsen"]
+[ext_resource type="Script" uid="uid://di75w4r5vg3cq" path="res://Scenes/num_key.gd" id="3_4nht6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_05pxh"]
+size = Vector3(0.015106201, 0.024627686, 0.012306213)
 
 [node name="Runic Phone2" unique_id=137542426 instance=ExtResource("1_u04ys")]
+script = ExtResource("2_xcsen")
 
 [node name="Runic Phone" parent="." index="0" unique_id=1438863196]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="0" type="Area3D" parent="." index="1" unique_id=2016876736]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09254259, -0.025533823)
+script = ExtResource("3_4nht6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="0" index="0" unique_id=53020933]
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="1" type="Area3D" parent="." index="2" unique_id=1830153842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.021027772, 0.09254259, -0.03245336)
+script = ExtResource("3_4nht6")
+num = "1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="1" index="0" unique_id=765520086]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0006032344, -0.002659604, 0)
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="2" type="Area3D" parent="." index="3" unique_id=414071825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.032919, 0.09254259, -0.048744783)
+script = ExtResource("3_4nht6")
+num = "2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="2" index="0" unique_id=2024592621]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0065409094, 0)
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="3" type="Area3D" parent="." index="4" unique_id=1730046431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03298806, 0.09254259, -0.0700248)
+script = ExtResource("3_4nht6")
+num = "3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="3" index="0" unique_id=1949981500]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009653188, 0)
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="4" type="Area3D" parent="." index="5" unique_id=1824479574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022749878, 0.08237812, -0.086981185)
+script = ExtResource("3_4nht6")
+num = "4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="4" index="0" unique_id=1019230266]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.002414573, 0, 0)
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="5" type="Area3D" parent="." index="6" unique_id=612057598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07859478, -0.09282586)
+script = ExtResource("3_4nht6")
+num = "5"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="5" index="0" unique_id=553580412]
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="6" type="Area3D" parent="." index="7" unique_id=1957097217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019261416, 0.07815176, -0.08649886)
+script = ExtResource("3_4nht6")
+num = "6"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="6" index="0" unique_id=1961984547]
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="7" type="Area3D" parent="." index="8" unique_id=1525009620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.029580452, 0.08338857, -0.06880319)
+script = ExtResource("3_4nht6")
+num = "7"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="7" index="0" unique_id=549808502]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.008589223, 0)
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="8" type="Area3D" parent="." index="9" unique_id=1299281926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031055052, 0.08667539, -0.050068237)
+script = ExtResource("3_4nht6")
+num = "8"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="8" index="0" unique_id=1807492350]
+shape = SubResource("BoxShape3D_05pxh")
+
+[node name="9" type="Area3D" parent="." index="10" unique_id=1904150859]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019731488, 0.087657794, -0.03209257)
+script = ExtResource("3_4nht6")
+num = "9"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="9" index="0" unique_id=881069786]
+shape = SubResource("BoxShape3D_05pxh")

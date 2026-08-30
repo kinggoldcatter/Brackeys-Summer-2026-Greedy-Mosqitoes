@@ -36,5 +36,7 @@ mesh = SubResource("CylinderMesh_gd5yo")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rotatry/Area3D" unique_id=514623399]
 shape = SubResource("BoxShape3D_jgh35")
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=894457725]
+
 [connection signal="mouse_entered" from="Rotatry/Area3D" to="Rotatry" method="_on_area_3d_mouse_entered"]
 [connection signal="mouse_exited" from="Rotatry/Area3D" to="Rotatry" method="_on_area_3d_mouse_exited"]

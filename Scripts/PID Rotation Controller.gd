@@ -3,9 +3,9 @@ extends Node3D
 @export var ObjectToRotate:RigidBody3D
 @export var pConstant:float
 @export var dConstant:float
-var TargetRotation:Basis = Basis.IDENTITY
-var TargetQuaternion:Quaternion = Quaternion(TargetRotation).normalized()
-var CurrerntQuaternion:Quaternion = Quaternion(ObjectToRotate.basis).normalized()
+@onready var TargetRotation:Basis = Basis.IDENTITY
+@onready var TargetQuaternion:Quaternion = Quaternion(TargetRotation).normalized()
+@onready var CurrerntQuaternion:Quaternion = Quaternion(ObjectToRotate.basis).normalized()
 
 func _physics_process(delta: float) -> void:
 	#Quaternion rotationError = targetTransform.rotation * Quaternion.Inverse(objectToMove.rotation);
