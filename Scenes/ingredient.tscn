@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://blnpx3yso7axk"]
+
+[ext_resource type="Texture2D" uid="uid://jifbxpktt5w8" path="res://Sprites/Ingredients/Empty Bottle.png" id="1_2hfw8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dxtnk"]
+
+[node name="Ingredient" type="RigidBody3D" unique_id=737213318]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=953621575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
+shape = SubResource("BoxShape3D_dxtnk")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=47357238]
+pixel_size = 0.05
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_2hfw8")

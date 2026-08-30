@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://fpc/character.tscn" id="1_iukft"]
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_gl6un"]
 [ext_resource type="Script" uid="uid://pv5fg4e5u406" path="res://Scripts/WorkStations/interact_region.gd" id="3_kldst"]
+[ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="4_7lihs"]
+[ext_resource type="PackedScene" uid="uid://dgv4f4tyrgno" path="res://Models/Logs.glb" id="5_fgofq"]
+[ext_resource type="PackedScene" uid="uid://b418dcxl4e56e" path="res://Models/Tent.glb" id="6_2irst"]
+[ext_resource type="PackedScene" uid="uid://blnpx3yso7axk" path="res://Scenes/ingredient.tscn" id="7_fgofq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_kldst"]
 size = Vector3(3.344162, 3.0024414, 4.472046)
@@ -14,6 +18,19 @@ size = Vector3(30, 30, 1)
 size = Vector3(30, 1, 30)
 
 [sub_resource type="Environment" id="Environment_iukft"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bf53h"]
+size = Vector3(1, 0.60546875, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_dxtnk"]
+top_radius = 0.296875
+bottom_radius = 0.296875
+height = 0.1619873
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a3bqw"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71axn"]
+size = Vector3(1, 0.5888672, 1)
 
 [node name="Game" type="Node3D" unique_id=837930261]
 
@@ -72,6 +89,37 @@ transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.414
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
 environment = SubResource("Environment_iukft")
+
+[node name="PotionStation" type="Node3D" parent="." unique_id=988357728]
+transform = Transform3D(0.84890026, 0, -0.528553, 0, 1, 0, 0.528553, 0, 0.84890026, -2.4808002, -0.29443187, 5.684224)
+
+[node name="Cauldron2" parent="PotionStation" unique_id=1185327369 instance=ExtResource("4_7lihs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="PotionStation/Cauldron2" unique_id=1720982918]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PotionStation/Cauldron2/RigidBody3D" unique_id=974356842]
+shape = SubResource("BoxShape3D_bf53h")
+
+[node name="Logs2" parent="PotionStation" unique_id=1663159580 instance=ExtResource("5_fgofq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
+
+[node name="Tent" parent="PotionStation" unique_id=340089939 instance=ExtResource("6_2irst")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78392327, 0)
+
+[node name="PotionGoop" type="MeshInstance3D" parent="PotionStation" unique_id=1353249982]
+transform = Transform3D(1.0000002, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, 1.0000002, 0, 1.5812049, 0)
+mesh = SubResource("CylinderMesh_dxtnk")
+surface_material_override/0 = SubResource("StandardMaterial3D_a3bqw")
+
+[node name="Area3D" type="Area3D" parent="PotionStation/PotionGoop" unique_id=1988625761]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PotionStation/PotionGoop/Area3D" unique_id=1653731324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.20556629, 0)
+shape = SubResource("BoxShape3D_71axn")
+
+[node name="Ingredient" parent="." unique_id=1289379313 instance=ExtResource("7_fgofq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5972736, 1.428158, 4.8177958)
 
 [connection signal="body_entered" from="GameWorld/BookStation/InteractRegion" to="GameWorld/BookStation/InteractRegion" method="_on_body_entered"]
 [connection signal="body_exited" from="GameWorld/BookStation/InteractRegion" to="GameWorld/BookStation/InteractRegion" method="_on_body_exited"]
