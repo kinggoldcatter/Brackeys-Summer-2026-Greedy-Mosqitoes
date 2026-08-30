@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://c53scikfa1d36"]
+
+[ext_resource type="Texture2D" uid="uid://dyp2recqq08mk" path="res://Sprites/Culkins.png" id="1_5k3r4"]
+[ext_resource type="FontFile" uid="uid://bsc5q1neui84h" path="res://Fonts/Pixelwarden-E4Yzj.ttf" id="2_3rpxg"]
+[ext_resource type="Texture2D" uid="uid://dnfg3bkem150q" path="res://Sprites/Cauldron.png" id="3_3rpxg"]
+
+[node name="www,culcalcaccau,wiz" type="Node2D" unique_id=1917819084]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1672340733]
+texture = ExtResource("1_5k3r4")
+offset = Vector2(320, 240)
+
+[node name="Sold Out Pot 1" type="Label" parent="." unique_id=1169158028]
+offset_left = 493.0
+offset_top = 248.0
+offset_right = 633.0
+offset_bottom = 283.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+text = "Gremlins
+First Pot's"
+
+[node name="Sold Out Pot 2" type="Label" parent="." unique_id=259620377]
+offset_left = 493.0
+offset_top = 364.0
+offset_right = 633.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+text = "Brian Drian
+Mk.99"
+
+[node name="The Troubadour" type="Label" parent="." unique_id=2128246169]
+offset_left = 216.0
+offset_top = 275.0
+offset_right = 356.0
+offset_bottom = 310.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+text = "The Troubadour"
+
+[node name="Description" type="Label" parent="." unique_id=1616226225]
+offset_left = 216.0
+offset_top = 292.0
+offset_right = 356.0
+offset_bottom = 327.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+theme_override_font_sizes/font_size = 12
+text = "The culmunation of the
+efferts of estemed potion's
+master, Max Poision's"
+
+[node name="Apology" type="Label" parent="." unique_id=1607812428]
+custom_maximum_size = Vector2(640, 480)
+offset_left = -1.0
+offset_top = -83.0
+offset_right = 639.0
+offset_bottom = 397.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 10
+theme_override_fonts/font = ExtResource("2_3rpxg")
+theme_override_font_sizes/font_size = 16
+text = "My deeepest appologies to the Cauldron community for the shourtage on our economic cauldron moddels. To accomodatethe prolonged outage (and as a result of all the monie we saved from not buy www.ccccc.wiz) we'll  will be dropping the price of the The Troubadour from 20 to just 10 Gold Pieces."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Title" type="Label" parent="." unique_id=701466613]
+offset_left = -29.0
+offset_top = 16.0
+offset_right = 673.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+theme_override_font_sizes/font_size = 36
+text = "Caleb Culkin's Cauldron Cache"
+horizontal_alignment = 1
+
+[node name="Buy Now Btn" type="Node2D" parent="." unique_id=1785838809]
+position = Vector2(215, 342)
+
+[node name="ColorRect2" type="ColorRect" parent="Buy Now Btn" unique_id=624002972]
+offset_left = 3.9999998
+offset_top = 6.0
+offset_right = 44.0
+offset_bottom = 46.0
+scale = Vector2(3.441976, 0.88)
+color = Color(0.5916802, 0.62890625, 0.23528749, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Buy Now Btn" unique_id=1404231329]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.441976, 0.88)
+color = Color(0.95404, 1, 0.43032998, 1)
+
+[node name="Label7" type="Label" parent="Buy Now Btn" unique_id=1896035636]
+offset_right = 140.0
+offset_bottom = 35.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_3rpxg")
+text = "Buy Now - 20g"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="Buy Now Btn" unique_id=1218694157]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(3.64, 1)
+
+[node name="Cauldron" type="Sprite2D" parent="." unique_id=113194032]
+position = Vector2(130, 355)
+scale = Vector2(0.407855, 0.41686895)
+texture = ExtResource("3_3rpxg")
