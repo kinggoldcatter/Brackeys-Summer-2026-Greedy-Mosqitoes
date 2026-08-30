@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://g4ylywewkcok"]
+
+[ext_resource type="FontFile" uid="uid://bsc5q1neui84h" path="res://Fonts/Pixelwarden-E4Yzj.ttf" id="1_pnksl"]
+
+[node name="www,cccc,wiz" type="Node2D" unique_id=1713657098]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1254828889]
+offset_right = 640.0
+offset_bottom = 480.0
+
+[node name="Label" type="Label" parent="." unique_id=258558437]
+offset_right = 458.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_pnksl")
+theme_override_font_sizes/font_size = 16
+text = "This domain is up for purchase at 1999 Gold Pieces."
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=1781395421]
