@@ -314,6 +314,7 @@ stream = ExtResource("16_n2bct")
 environment = SubResource("Environment_iukft")
 
 [node name="Ings" type="Node3D" parent="." unique_id=1777905467]
+visible = false
 script = ExtResource("15_r1uwj")
 
 [node name="Wine" parent="Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
