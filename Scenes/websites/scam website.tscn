@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://3cijp76w7dbt"]
+[gd_scene format=3 uid="uid://c53scikfa1d36"]
 
 [ext_resource type="Texture2D" uid="uid://dyp2recqq08mk" path="res://Sprites/Culkins.png" id="1_5k3r4"]
 [ext_resource type="FontFile" uid="uid://bsc5q1neui84h" path="res://Fonts/Pixelwarden-E4Yzj.ttf" id="2_3rpxg"]
@@ -37,7 +37,7 @@ offset_right = 356.0
 offset_bottom = 310.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_3rpxg")
-text = "The Trobadour"
+text = "The Troubadour"
 
 [node name="Description" type="Label" parent="." unique_id=1616226225]
 offset_left = 216.0
@@ -74,19 +74,7 @@ offset_bottom = 64.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_3rpxg")
 theme_override_font_sizes/font_size = 36
-text = "Clyde Culkin's Cauldron Cache"
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="Title" unique_id=37150741]
-layout_mode = 0
-offset_left = -1.0
-offset_top = 36.0
-offset_right = 701.0
-offset_bottom = 84.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_3rpxg")
-theme_override_font_sizes/font_size = 19
-text = "www.CalCulCauCac.wiz"
+text = "Caleb Culkin's Cauldron Cache"
 horizontal_alignment = 1
 
 [node name="Buy Now Btn" type="Node2D" parent="." unique_id=1785838809]

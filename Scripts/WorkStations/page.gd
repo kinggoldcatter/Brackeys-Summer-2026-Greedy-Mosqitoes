@@ -1,4 +1,4 @@
-extends MeshInstance3D
+extends Node3D
 
 # Used for checking if the mouse is inside the Area3D.
 var is_mouse_inside: bool = false

@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cd6qyki8xmckt"]
+
+[ext_resource type="PackedScene" uid="uid://pl4y5u2dg3pj" path="res://Scenes/orb.tscn" id="1_ah1ik"]
+[ext_resource type="Script" uid="uid://csd8w3ugx13dm" path="res://Scripts/WorkStations/page.gd" id="2_k7o43"]
+[ext_resource type="PackedScene" uid="uid://8qnu4lc5ia4c" path="res://Scenes/websites/browser.tscn" id="3_k7o43"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_nry4h"]
+viewport_path = NodePath("Monitor/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3vi7"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_nry4h")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dxtnk"]
+size = Vector2(0.4, 0.3)
+orientation = 2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nry4h"]
+size = Vector3(0.20703125, 0.14074707, 0.013977051)
+
+[node name="OrbStation" type="Node3D" unique_id=1631146207]
+
+[node name="ORB" parent="." unique_id=1525731915 instance=ExtResource("1_ah1ik")]
+
+[node name="Monitor" type="Node3D" parent="." unique_id=822312829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.4744873)
+script = ExtResource("2_k7o43")
+
+[node name="ContentQuad" type="MeshInstance3D" parent="Monitor" unique_id=1569647685]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.14228942, 0.25803754)
+material_override = SubResource("StandardMaterial3D_m3vi7")
+mesh = SubResource("PlaneMesh_dxtnk")
+
+[node name="MouseDetector" type="Area3D" parent="Monitor/ContentQuad" unique_id=465526545]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.28457883, -0.4403636)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/ContentQuad/MouseDetector" unique_id=969401653]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036410093, 0.14127721, 0.21990293)
+shape = SubResource("BoxShape3D_nry4h")
+
+[node name="SubViewport" type="SubViewport" parent="Monitor" unique_id=1937700736 groups=["web_browser"]]
+gui_embed_subwindows = true
+size = Vector2i(640, 480)
+
+[node name="Browser" parent="Monitor/SubViewport" unique_id=607288629 instance=ExtResource("3_k7o43")]

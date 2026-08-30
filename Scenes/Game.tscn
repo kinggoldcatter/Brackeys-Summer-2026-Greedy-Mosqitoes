@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://cltwm5pln7re4" path="res://Scenes/interact_region.tscn" id="3_alh3a"]
 [ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="4_7lihs"]
-[ext_resource type="Script" uid="uid://cvpwkiunhnv3m" path="res://Scripts/interact_region.gd" id="4_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://dgv4f4tyrgno" path="res://Models/Logs.glb" id="5_fgofq"]
 [ext_resource type="PackedScene" uid="uid://b418dcxl4e56e" path="res://Models/Tent.glb" id="6_2irst"]
 [ext_resource type="Script" uid="uid://dwt3o3olykw6j" path="res://Scripts/potion_goop.gd" id="6_wxwew"]
@@ -22,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://b4720x4i03mc6" path="res://Scenes/door_2.tscn" id="16_alh3a"]
 [ext_resource type="PackedScene" uid="uid://dp5hl74s0gob6" path="res://Scenes/runic_phone_2.tscn" id="17_4q8tf"]
 [ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_8r6kd"]
+[ext_resource type="PackedScene" uid="uid://cd6qyki8xmckt" path="res://Scenes/orb_station.tscn" id="23_lbihj"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -47,6 +47,9 @@ size = Vector3(1, 0.5888672, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8r6kd"]
 size = Vector3(0.6751821, 0.3110469, 0.775959)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lbihj"]
+size = Vector3(2.2896538, 3.0024414, 4.030945)
 
 [node name="Game" type="Node3D" unique_id=837930261]
 
@@ -145,8 +148,8 @@ transform = Transform3D(-0.9993387, 0, 0.036360443, 0.035995323, 0.14135927, 0.9
 [node name="Camera3D" type="Camera3D" parent="GameWorld/BookStation" unique_id=449507191]
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.06421471, 2.7036786, 0.23899174)
 
-[node name="InteractRegion" parent="GameWorld/BookStation" unique_id=389112560 instance=ExtResource("3_alh3a")]
-script = ExtResource("4_x3xnh")
+[node name="InteractRegion" parent="GameWorld/BookStation" unique_id=389112560 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_alh3a")]
+station_cam = NodePath("../Camera3D")
 
 [node name="Floor" type="Node3D" parent="GameWorld" unique_id=555609198]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -281,9 +284,26 @@ aabb = AABB(-0.12357698, -2.118418, -0.7298039, 0.24715395, 0.22316426, 0.144422
 [node name="Camera3D" type="Camera3D" parent="Runic Phone2" unique_id=314814777]
 transform = Transform3D(-1, 7.673968e-08, -4.1877954e-08, 0, 0.47902796, 0.87779963, 8.742278e-08, 0.87779963, -0.47902796, 4.788462e-09, 0.18166715, -0.11466445)
 
+[node name="OrbStation" parent="." unique_id=1631146207 instance=ExtResource("23_lbihj")]
+transform = Transform3D(0.95400614, 0, 0.2997871, 0, 1, 0, -0.2997871, 0, 0.95400614, -3.3056958, 1.7159934, 6.2133794)
+
+[node name="InteractRegion" parent="OrbStation" unique_id=1493565979 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_alh3a")]
+station_cam = NodePath("../Camera3D")
+
+[node name="CollisionShape3D" parent="OrbStation/InteractRegion" index="0" unique_id=1151808112]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, 0.042741776, -0.32666016, 0.17287922)
+shape = SubResource("BoxShape3D_lbihj")
+
+[node name="VisibleOnScreenNotifier3D" parent="OrbStation/InteractRegion" index="1" unique_id=238854571]
+aabb = AABB(-0.14281513, -2.409471, -0.7996458, 0.28563026, 0.685153, 0.3417232)
+
+[node name="Camera3D" type="Camera3D" parent="OrbStation" unique_id=1701482353]
+transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0.0065894127, 0.13313031, -0.36158323)
+
 [connection signal="body_entered" from="GameWorld/PotionStation/PotionGoop/Area3D" to="GameWorld/PotionStation/PotionGoop" method="_on_area_3d_body_entered"]
 [connection signal="phone_called" from="Runic Phone2" to="QuestManager" method="_on_runic_phone_2_phone_called"]
 
+[editable path="GameWorld/BookStation/InteractRegion"]
 [editable path="Ings/Wine"]
 [editable path="Ings/SourWine"]
 [editable path="Ings/AcidicFissionSpores"]
@@ -292,3 +312,4 @@ transform = Transform3D(-1, 7.673968e-08, -4.1877954e-08, 0, 0.47902796, 0.87779
 [editable path="Ings/CursedDeadSeaSalt"]
 [editable path="door2/InteractRegion"]
 [editable path="Runic Phone2/InteractRegion"]
+[editable path="OrbStation/InteractRegion"]

@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://ffpd08qmyxk6"]
+[gd_scene format=3 uid="uid://c873gqxnlshbk"]
 
 [ext_resource type="Texture2D" uid="uid://dyp2recqq08mk" path="res://Sprites/Culkins.png" id="1_q5yry"]
 [ext_resource type="FontFile" uid="uid://bsc5q1neui84h" path="res://Fonts/Pixelwarden-E4Yzj.ttf" id="2_akf43"]
@@ -52,7 +52,6 @@ efforts of estimed potion's
 master, Maxine Veleno"
 
 [node name="Label6" type="Label" parent="." unique_id=1607812428]
-custom_maximum_size = Vector2(640, 480)
 offset_left = -1.0
 offset_top = -83.0
 offset_right = 639.0
@@ -75,17 +74,6 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_akf43")
 theme_override_font_sizes/font_size = 36
 text = "Caldwin Culkin's Cauldron Cache"
-horizontal_alignment = 1
-
-[node name="Label7" type="Label" parent="." unique_id=1459848700]
-offset_left = -29.0
-offset_top = 52.0
-offset_right = 673.0
-offset_bottom = 100.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("2_akf43")
-theme_override_font_sizes/font_size = 19
-text = "www.CalCulCauCac.wiz"
 horizontal_alignment = 1
 
 [node name="Cauldron" type="Sprite2D" parent="." unique_id=41613326]
