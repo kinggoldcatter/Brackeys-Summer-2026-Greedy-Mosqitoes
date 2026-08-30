@@ -77,6 +77,17 @@ theme_override_font_sizes/font_size = 36
 text = "Caldwin Culkin's Cauldron Cache"
 horizontal_alignment = 1
 
+[node name="Label7" type="Label" parent="." unique_id=1459848700]
+offset_left = -29.0
+offset_top = 52.0
+offset_right = 673.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("2_akf43")
+theme_override_font_sizes/font_size = 19
+text = "www.CalCulCauCac.wiz"
+horizontal_alignment = 1
+
 [node name="Cauldron" type="Sprite2D" parent="." unique_id=41613326]
 position = Vector2(120, 346)
 scale = Vector2(0.407855, 0.41686895)
