@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dimpptaverfy8"]
+
+[ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="1_t0y0h"]
+
+[resource]
+albedo_texture = ExtResource("1_t0y0h")
+uv1_scale = Vector3(15, 15, 15)
+texture_filter = 0
