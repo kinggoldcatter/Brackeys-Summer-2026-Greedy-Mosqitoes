@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dms0kd3f2eigi" path="res://Scenes/WorkStations/Grimoire.tscn" id="2_gl6un"]
 [ext_resource type="PackedScene" uid="uid://cltwm5pln7re4" path="res://Scenes/interact_region.tscn" id="3_alh3a"]
 [ext_resource type="PackedScene" uid="uid://b6gjtdvbq3qww" path="res://Models/Cauldron.glb" id="4_7lihs"]
+[ext_resource type="Script" uid="uid://cvpwkiunhnv3m" path="res://Scripts/interact_region.gd" id="4_x3xnh"]
 [ext_resource type="PackedScene" uid="uid://dgv4f4tyrgno" path="res://Models/Logs.glb" id="5_fgofq"]
 [ext_resource type="PackedScene" uid="uid://b418dcxl4e56e" path="res://Models/Tent.glb" id="6_2irst"]
 [ext_resource type="Script" uid="uid://dwt3o3olykw6j" path="res://Scripts/potion_goop.gd" id="6_wxwew"]
@@ -17,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://be3ny85ukgpqy" path="res://Sprites/Ingredients/Cursed Dead Sea Salt.png" id="13_alh3a"]
 [ext_resource type="PackedScene" uid="uid://b4720x4i03mc6" path="res://Scenes/door_2.tscn" id="16_alh3a"]
 [ext_resource type="PackedScene" uid="uid://dp5hl74s0gob6" path="res://Scenes/runic_phone_2.tscn" id="17_4q8tf"]
+[ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_8r6kd"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -89,6 +91,39 @@ text = "It was actully a bomb recipe oops...
 press esc to quit or r to restart"
 horizontal_alignment = 1
 
+[node name="GoodEnding" type="Control" parent="GameUI" unique_id=129922203]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameUI/GoodEnding" unique_id=213026468]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="GameUI/GoodEnding" unique_id=24380194]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -37.5
+offset_bottom = 37.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "You walk outside and feel very ill as your body has an allergic reaction to all the magic trees and stuff out there
+you forget your dreams of imortallity while making another appointment to your allergy docter
+you regret trusting your immune system"
+horizontal_alignment = 1
+
 [node name="GameWorld" type="Node3D" parent="." unique_id=1204066649]
 
 [node name="BookStation" type="Node3D" parent="GameWorld" unique_id=2092422534]
@@ -101,6 +136,7 @@ transform = Transform3D(-0.9993387, 0, 0.036360443, 0.035995323, 0.14135927, 0.9
 transform = Transform3D(-1, 8.742278e-08, 3.821371e-15, 0, -4.371139e-08, 1, 8.742278e-08, 1, 4.371139e-08, 0.06421471, 2.7036786, 0.23899174)
 
 [node name="InteractRegion" parent="GameWorld/BookStation" unique_id=389112560 instance=ExtResource("3_alh3a")]
+script = ExtResource("4_x3xnh")
 
 [node name="Floor" type="Node3D" parent="GameWorld" unique_id=555609198]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, 0)
@@ -203,6 +239,7 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -14.627644, 0.59691143, 0)
 
 [node name="InteractRegion" parent="door2" unique_id=1510606781 instance=ExtResource("3_alh3a")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.16404867, -0.119382285, 0)
+script = ExtResource("18_8r6kd")
 
 [node name="VisibleOnScreenNotifier3D" parent="door2/InteractRegion" index="1" unique_id=238854571]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.591465, 2.515277, 0.44794035)

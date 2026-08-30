@@ -70,7 +70,6 @@ func _default_throw() -> void:
 		var throw_direction: Vector3 = -player_hand.global_transform.basis.z.normalized()
 		var throw_strength: float = (20.0/rigid_body_3d.mass)
 		rigid_body_3d.set_linear_velocity(throw_direction*throw_strength)
-		
 		can_interact = false
 		await  get_tree().create_timer(2.0).timeout
 		can_interact = true
