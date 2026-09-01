@@ -136,7 +136,7 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "It was actully a bomb recipe oops...
  you regret trusting that nasty book in your last moments of not being a stain on the floor
-press q to quit or r to restart"
+press r to restart"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameUI/TrueEnding" unique_id=438556685]
@@ -173,7 +173,7 @@ grow_vertical = 2
 text = "You walk outside and feel very ill as your body has an allergic reaction to all the magic trees and stuff out there
 you forget your dreams of imortallity while making another appointment to your allergy docter
 you regret trusting your immune system
-press q to quit or r to restart"
+press r to restart"
 horizontal_alignment = 1
 
 [node name="ScammedEnding" type="Control" parent="GameUI" unique_id=513683449]
@@ -207,7 +207,7 @@ grow_vertical = 2
 text = "As you enter you wizardExpress card details you have a bad feeling you were uncareful
 Seconds later you get a call from your bank, everything its gone
 you should have not trusted that website!
-press q to quit or r to restart"
+press r to restart"
 horizontal_alignment = 1
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="GameUI/ScammedEnding" unique_id=1872682252]
