@@ -46,7 +46,7 @@ size = Vector2i(640, 480)
 
 [node name="Browser" parent="Monitor/SubViewport" unique_id=607288629 instance=ExtResource("3_k7o43")]
 
-[node name="TextEdit" type="TextEdit" parent="Monitor/SubViewport" unique_id=1383596996]
+[node name="TextEdit" type="LineEdit" parent="Monitor/SubViewport" unique_id=2025750439]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 24.0

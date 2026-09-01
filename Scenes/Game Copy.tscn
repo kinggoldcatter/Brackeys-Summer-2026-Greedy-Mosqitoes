@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dgv4f4tyrgno" path="res://Models/Logs.glb" id="6_0w5v7"]
 [ext_resource type="PackedScene" uid="uid://b418dcxl4e56e" path="res://Models/Tent.glb" id="7_2wbel"]
 [ext_resource type="Script" uid="uid://dwt3o3olykw6j" path="res://Scripts/potion_goop.gd" id="8_mlq70"]
+[ext_resource type="Script" uid="uid://csmatrvhno14x" path="res://Scripts/WorkStations/interact_region_orb.gd" id="9_7iokb"]
 [ext_resource type="PackedScene" uid="uid://cc1m2a1obsyn4" path="res://fpc/character.tscn" id="9_r1uwj"]
 [ext_resource type="PackedScene" uid="uid://blnpx3yso7axk" path="res://Scenes/ingredient.tscn" id="10_c6rl5"]
 [ext_resource type="PackedScene" uid="uid://cd6qyki8xmckt" path="res://Scenes/orb_station.tscn" id="11_0w5v7"]
@@ -23,7 +24,6 @@
 [ext_resource type="Texture2D" uid="uid://d4fimorppoeuc" path="res://Sprites/Ingredients/Limescale's Bane.png" id="14_d8p3j"]
 [ext_resource type="AudioStream" uid="uid://c2q00mqlsqqke" path="res://Sounds/lazychillzone-cauldron-bubbling-1-232444.ogg" id="14_vr782"]
 [ext_resource type="Script" uid="uid://bv32d4bro6m5" path="res://Scenes/deamon_talk.gd" id="15_c6rl5"]
-[ext_resource type="Script" uid="uid://iki8l0ylruf7" path="res://Scenes/ings.gd" id="15_r1uwj"]
 [ext_resource type="Texture2D" uid="uid://yca2a8eo5586" path="res://Sprites/Ingredients/Gorgon's Venom.png" id="15_vr782"]
 [ext_resource type="AudioStream" uid="uid://diwbn8ccgrdye" path="res://Sounds/demon-summoning-in-latin-sound-effect-made-with-Voicemod.mp3" id="16_n2bct"]
 [ext_resource type="Texture2D" uid="uid://be3ny85ukgpqy" path="res://Sprites/Ingredients/Cursed Dead Sea Salt.png" id="16_nlbtg"]
@@ -31,6 +31,7 @@
 [ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_rcrtu"]
 [ext_resource type="PackedScene" uid="uid://dp5hl74s0gob6" path="res://Scenes/runic_phone_2.tscn" id="19_s6jed"]
 [ext_resource type="Texture2D" uid="uid://c0i52u3yfeckd" path="res://Textures/wall_brick_stone_center.png" id="21_aplya"]
+[ext_resource type="Script" uid="uid://dc85scd6jy31s" path="res://Scripts/ings.gd" id="21_nlbtg"]
 [ext_resource type="PackedScene" uid="uid://od5oe1h6gjn2" path="res://Models/ROOF.glb" id="22_dmsjh"]
 [ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="23_dwut8"]
 [ext_resource type="AudioStream" uid="uid://dcprsd8js0237" path="res://Sounds/dragon-studio-open-door-stock-sfx-454246.mp3" id="26_qu6gi"]
@@ -40,6 +41,14 @@ size = Vector3(30, 30, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtjto"]
 size = Vector3(30, 1, 30)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_rcrtu"]
+viewport_path = NodePath("Monitor/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6jed"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_rcrtu")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2wbel"]
 size = Vector3(2.2896538, 3.0024414, 4.030945)
@@ -236,7 +245,11 @@ transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.414
 [node name="OrbStation" parent="GameWorld" unique_id=1631146207 instance=ExtResource("11_0w5v7")]
 transform = Transform3D(-0.73932743, 0, 0.6733461, 0, 1, 0, -0.6733461, 0, -0.73932743, 1.1621048, 1.7159934, -2.547631)
 
+[node name="ContentQuad" parent="GameWorld/OrbStation/Monitor" parent_id_path=PackedInt32Array(1631146207, 822312829) index="0" unique_id=1569647685]
+material_override = SubResource("StandardMaterial3D_s6jed")
+
 [node name="InteractRegion" parent="GameWorld/OrbStation" unique_id=1465450791 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_aplya")]
+script = ExtResource("9_7iokb")
 station_cam = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" parent="GameWorld/OrbStation/InteractRegion" index="0" unique_id=1151808112]
@@ -335,7 +348,7 @@ environment = SubResource("Environment_iukft")
 
 [node name="Ings" type="Node3D" parent="." unique_id=1777905467]
 visible = false
-script = ExtResource("15_r1uwj")
+script = ExtResource("21_nlbtg")
 
 [node name="Wine" parent="Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -0.71184397, 1.14569, -2.34191)
@@ -456,6 +469,7 @@ light_color = Color(0, 0.9249182, 1, 1)
 
 [connection signal="body_entered" from="GameWorld/PotionStation/Cauldron2/PotionGoop/Area3D" to="GameWorld/PotionStation/Cauldron2/PotionGoop" method="_on_area_3d_body_entered"]
 
+[editable path="GameWorld/OrbStation"]
 [editable path="GameWorld/OrbStation/InteractRegion"]
 [editable path="GameWorld/Runic Phone2/InteractRegion"]
 [editable path="GameWorld/BookStation/InteractRegion"]
