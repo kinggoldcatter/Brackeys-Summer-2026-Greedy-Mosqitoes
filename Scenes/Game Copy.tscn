@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://od5oe1h6gjn2" path="res://Models/ROOF.glb" id="22_dmsjh"]
 [ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="23_dwut8"]
 [ext_resource type="AudioStream" uid="uid://dcprsd8js0237" path="res://Sounds/dragon-studio-open-door-stock-sfx-454246.mp3" id="26_qu6gi"]
+[ext_resource type="Script" uid="uid://crfgc67rkk6tc" path="res://Scripts/mouse_kidnapper.gd" id="36_rcrtu"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -42,13 +43,13 @@ size = Vector3(30, 30, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_mtjto"]
 size = Vector3(30, 1, 30)
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_rcrtu"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_s6jed"]
 viewport_path = NodePath("Monitor/SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s6jed"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6rau"]
 resource_local_to_scene = true
 shading_mode = 0
-albedo_texture = SubResource("ViewportTexture_rcrtu")
+albedo_texture = SubResource("ViewportTexture_s6jed")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2wbel"]
 size = Vector3(2.2896538, 3.0024414, 4.030945)
@@ -246,7 +247,7 @@ transform = Transform3D(1, 0, 0, 0, 0.4143037, 0.91013867, 0, -0.91013867, 0.414
 transform = Transform3D(-0.73932743, 0, 0.6733461, 0, 1, 0, -0.6733461, 0, -0.73932743, 1.1621048, 1.7159934, -2.547631)
 
 [node name="ContentQuad" parent="GameWorld/OrbStation/Monitor" parent_id_path=PackedInt32Array(1631146207, 822312829) index="0" unique_id=1569647685]
-material_override = SubResource("StandardMaterial3D_s6jed")
+material_override = SubResource("StandardMaterial3D_g6rau")
 
 [node name="InteractRegion" parent="GameWorld/OrbStation" unique_id=1465450791 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_aplya")]
 script = ExtResource("9_7iokb")
@@ -466,6 +467,9 @@ light_color = Color(1, 0, 0.00740242, 1)
 [node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1973729867]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8477795, 9.260601, -0.7426381)
 light_color = Color(0, 0.9249182, 1, 1)
+
+[node name="MouseKidnapper" type="Node" parent="." unique_id=351838985]
+script = ExtResource("36_rcrtu")
 
 [connection signal="body_entered" from="GameWorld/PotionStation/Cauldron2/PotionGoop/Area3D" to="GameWorld/PotionStation/Cauldron2/PotionGoop" method="_on_area_3d_body_entered"]
 

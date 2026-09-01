@@ -10,8 +10,9 @@ var interacting: bool = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and looked_at and possible_interaction and not interacting:
 		station_cam.current = true
-		Input.mouse_mode = Input.MOUSE_MODE_CONFINED
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		interacting = true
+		GameState.now_interacting.emit()
 		
 		
 	elif Input.is_action_just_pressed("interact") and interacting:
@@ -19,7 +20,7 @@ func _process(delta: float) -> void:
 		station_cam.current = false
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		interacting = false
-		
+		GameState.done_interacting.emit()
 
 
 func _on_body_entered(body: Node3D) -> void:
