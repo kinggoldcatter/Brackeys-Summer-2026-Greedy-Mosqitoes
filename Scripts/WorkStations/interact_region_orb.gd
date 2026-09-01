@@ -6,6 +6,7 @@ extends Area3D
 var possible_interaction: bool = false
 var looked_at: bool = false
 var interacting: bool = false
+@onready var tedit: LineEdit = $"../Monitor/SubViewport/TextEdit"
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and looked_at and possible_interaction and not interacting:
@@ -20,7 +21,10 @@ func _process(delta: float) -> void:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		interacting = false
 		
-
+		if tedit.is_editing():
+			tedit.delete_char_at_caret()
+		tedit.unedit()
+		
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.is_in_group("the_player"):

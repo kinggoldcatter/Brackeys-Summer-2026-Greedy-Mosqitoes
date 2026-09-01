@@ -1,4 +1,4 @@
-extends TextEdit
+extends LineEdit
 
 @onready var web_browser = get_tree().get_first_node_in_group("web_browser")
 

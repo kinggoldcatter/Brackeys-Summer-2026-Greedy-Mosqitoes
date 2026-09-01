@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dp5hl74s0gob6" path="res://Scenes/runic_phone_2.tscn" id="17_4q8tf"]
 [ext_resource type="Script" uid="uid://06t37wvdtrqt" path="res://Scenes/exit_door.gd" id="18_8r6kd"]
 [ext_resource type="PackedScene" uid="uid://cd6qyki8xmckt" path="res://Scenes/orb_station.tscn" id="23_lbihj"]
+[ext_resource type="Script" uid="uid://csmatrvhno14x" path="res://Scripts/WorkStations/interact_region_orb.gd" id="23_raj38"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_dxtnk"]
 size = Vector3(30, 30, 1)
@@ -47,6 +48,14 @@ size = Vector3(1, 0.5888672, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8r6kd"]
 size = Vector3(0.6751821, 0.3110469, 0.775959)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_lbihj"]
+viewport_path = NodePath("Monitor/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_raj38"]
+resource_local_to_scene = true
+shading_mode = 0
+albedo_texture = SubResource("ViewportTexture_lbihj")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lbihj"]
 size = Vector3(2.2896538, 3.0024414, 4.030945)
@@ -322,7 +331,11 @@ transform = Transform3D(-1, 7.673968e-08, -4.1877954e-08, 0, 0.47902796, 0.87779
 [node name="OrbStation" parent="." unique_id=1631146207 instance=ExtResource("23_lbihj")]
 transform = Transform3D(0.95400614, 0, 0.2997871, 0, 1, 0, -0.2997871, 0, 0.95400614, -3.3056958, 1.7159934, 6.2133794)
 
+[node name="ContentQuad" parent="OrbStation/Monitor" parent_id_path=PackedInt32Array(1631146207, 822312829) index="0" unique_id=1569647685]
+material_override = SubResource("StandardMaterial3D_raj38")
+
 [node name="InteractRegion" parent="OrbStation" unique_id=1493565979 node_paths=PackedStringArray("station_cam") instance=ExtResource("3_alh3a")]
+script = ExtResource("23_raj38")
 station_cam = NodePath("../Camera3D")
 
 [node name="CollisionShape3D" parent="OrbStation/InteractRegion" index="0" unique_id=1151808112]
@@ -347,4 +360,5 @@ transform = Transform3D(-1, 0, -8.940697e-08, 0, 1, 0, 8.940697e-08, 0, -1, 0.00
 [editable path="Ings/CursedDeadSeaSalt"]
 [editable path="door2/InteractRegion"]
 [editable path="Runic Phone2/InteractRegion"]
+[editable path="OrbStation"]
 [editable path="OrbStation/InteractRegion"]
