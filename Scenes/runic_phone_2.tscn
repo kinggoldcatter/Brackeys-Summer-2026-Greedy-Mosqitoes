@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://kswfjhlcen6" path="res://Models/Runic Phone.glb" id="1_u04ys"]
 [ext_resource type="Script" uid="uid://vohov7eyn1ue" path="res://Scenes/runic_phone_2.gd" id="2_xcsen"]
 [ext_resource type="Script" uid="uid://di75w4r5vg3cq" path="res://Scenes/num_key.gd" id="3_4nht6"]
+[ext_resource type="AudioStream" uid="uid://dtfc04o5nwvqt" path="res://Sounds/freesound_community-negative-101682.mp3" id="4_4nht6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_05pxh"]
 size = Vector3(0.015106201, 0.024627686, 0.012306213)
@@ -96,3 +97,6 @@ num = "9"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="9" index="0" unique_id=881069786]
 shape = SubResource("BoxShape3D_05pxh")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="11" unique_id=1228815988]
+stream = ExtResource("4_4nht6")

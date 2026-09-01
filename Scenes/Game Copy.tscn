@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://c0i52u3yfeckd" path="res://Textures/wall_brick_stone_center.png" id="21_aplya"]
 [ext_resource type="Script" uid="uid://dc85scd6jy31s" path="res://Scripts/ings.gd" id="21_nlbtg"]
 [ext_resource type="PackedScene" uid="uid://od5oe1h6gjn2" path="res://Models/ROOF.glb" id="22_dmsjh"]
+[ext_resource type="Script" uid="uid://d0gkw761xe0n8" path="res://Scripts/ings_manager.gd" id="22_s6jed"]
 [ext_resource type="Texture2D" uid="uid://d3dwaxtiplyjn" path="res://Textures/floor_wood_planks_depth.png" id="23_dwut8"]
 [ext_resource type="AudioStream" uid="uid://dcprsd8js0237" path="res://Sounds/dragon-studio-open-door-stock-sfx-454246.mp3" id="26_qu6gi"]
 [ext_resource type="Script" uid="uid://crfgc67rkk6tc" path="res://Scripts/mouse_kidnapper.gd" id="36_rcrtu"]
@@ -347,55 +348,58 @@ stream = ExtResource("16_n2bct")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=973806295]
 environment = SubResource("Environment_iukft")
 
-[node name="Ings" type="Node3D" parent="." unique_id=1777905467]
+[node name="IngsManager" type="Node" parent="." unique_id=1407544466]
+script = ExtResource("22_s6jed")
+
+[node name="Ings" type="Node3D" parent="IngsManager" unique_id=1777905467]
 visible = false
 script = ExtResource("21_nlbtg")
 
-[node name="Wine" parent="Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="Wine" parent="IngsManager/Ings" unique_id=1289379313 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -0.71184397, 1.14569, -2.34191)
 color = Color(0.27450982, 0.003921569, 0.1882353, 1)
 
-[node name="Sprite3D" parent="Ings/Wine" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/Wine" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("11_qu6gi")
 
-[node name="SourWine" parent="Ings" unique_id=737213318 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="SourWine" parent="IngsManager/Ings" unique_id=737213318 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -4.0284925, 1.4442067, -3.8326888)
 color = Color(0.9411765, 0.83137256, 0.4392157, 1)
 
-[node name="Sprite3D" parent="Ings/SourWine" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/SourWine" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("12_n2bct")
 
-[node name="AcidicFissionSpores" parent="Ings" unique_id=233733413 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="AcidicFissionSpores" parent="IngsManager/Ings" unique_id=233733413 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -5.1707277, 1.4442077, -4.909271)
 color = Color(0.79607844, 1, 0.72156864, 1)
 
-[node name="Sprite3D" parent="Ings/AcidicFissionSpores" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/AcidicFissionSpores" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("13_1hg13")
 
-[node name="Limescale\'sBane" parent="Ings" unique_id=476906863 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="Limescale\'sBane" parent="IngsManager/Ings" unique_id=476906863 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -1.8892395, 1.4442077, -2.1929445)
 color = Color(1, 0.9411765, 0.9882353, 1)
 
-[node name="Sprite3D" parent="Ings/Limescale\'sBane" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/Limescale\'sBane" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("14_d8p3j")
 
-[node name="GorgonVenom" parent="Ings" unique_id=972454102 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="GorgonVenom" parent="IngsManager/Ings" unique_id=972454102 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -3.9701073, 1.4442077, -1.9406531)
 color = Color(0.2627451, 0.28627452, 0.25490198, 1)
 
-[node name="Sprite3D" parent="Ings/GorgonVenom" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/GorgonVenom" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("15_vr782")
 
-[node name="CursedDeadSeaSalt" parent="Ings" unique_id=1277645699 groups=["ing"] instance=ExtResource("10_c6rl5")]
+[node name="CursedDeadSeaSalt" parent="IngsManager/Ings" unique_id=1277645699 groups=["ing"] instance=ExtResource("10_c6rl5")]
 transform = Transform3D(-0.06648156, 0, 0.99778765, 0, 1, 0, -0.99778765, 0, -0.06648156, -2.7196634, 1.4442077, -3.7481003)
 color = Color(0.039215688, 0, 0.039215688, 1)
 
-[node name="Sprite3D" parent="Ings/CursedDeadSeaSalt" index="1" unique_id=47357238]
+[node name="Sprite3D" parent="IngsManager/Ings/CursedDeadSeaSalt" index="1" unique_id=47357238]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0049743652, -0.004119873, 0.0044174194)
 texture = ExtResource("16_nlbtg")
 
@@ -477,11 +481,11 @@ script = ExtResource("36_rcrtu")
 [editable path="GameWorld/OrbStation/InteractRegion"]
 [editable path="GameWorld/Runic Phone2/InteractRegion"]
 [editable path="GameWorld/BookStation/InteractRegion"]
-[editable path="Ings/Wine"]
-[editable path="Ings/SourWine"]
-[editable path="Ings/AcidicFissionSpores"]
-[editable path="Ings/Limescale\'sBane"]
-[editable path="Ings/GorgonVenom"]
-[editable path="Ings/CursedDeadSeaSalt"]
+[editable path="IngsManager/Ings/Wine"]
+[editable path="IngsManager/Ings/SourWine"]
+[editable path="IngsManager/Ings/AcidicFissionSpores"]
+[editable path="IngsManager/Ings/Limescale\'sBane"]
+[editable path="IngsManager/Ings/GorgonVenom"]
+[editable path="IngsManager/Ings/CursedDeadSeaSalt"]
 [editable path="door2/InteractRegion"]
 [editable path="ROOF"]

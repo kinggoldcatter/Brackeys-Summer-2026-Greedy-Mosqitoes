@@ -20,5 +20,6 @@ func input_num(num: String) -> void:
 			GameState.deamon_summoned.emit()
 		else:
 			print("lol bad at numbers")
+			$AudioStreamPlayer3D.play()
 		phone_num = ""
 	print(phone_num) 
