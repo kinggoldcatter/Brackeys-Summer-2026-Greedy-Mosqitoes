@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bilohf8e5n0on" path="res://Scenes/texture_button.gd" id="4_msblh"]
 
 [node name="www,calculcaucac,wiz" type="Control" unique_id=637921773]
+custom_minimum_size = Vector2(640, 482)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

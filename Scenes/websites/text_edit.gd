@@ -6,15 +6,15 @@ extends LineEdit
 @onready var fake_site = preload("res://Scenes/scam website.tscn")
 @onready var browser = preload("res://Scenes/websites/browser.tscn")
 
-@onready var current_site: Node = $"../../../tab/ScrollContainer/CenterContainer/Browser"
-@onready var tab: TabContainer = $"../../../tab"
+@onready var current_site: Node = $"../../../ContentDisplay/ContentCenterer/Wizbowz"
+@onready var tab: TabBar = $"../../../TopTabBar/TabBar"
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("checkLock"):
 		print(text)
 		if text.strip_edges().to_lower()== "www.calculcaucac.wiz":
-			tab.set_tab_title(tab.currenttab ,"calculcaucac")
+			tab.set_tab_title(tab.current_tab ,"calculcaucac")
 			var new_site: Node = real_site.instantiate()
 			web_browser.add_child(new_site)
 			current_site.queue_free()
