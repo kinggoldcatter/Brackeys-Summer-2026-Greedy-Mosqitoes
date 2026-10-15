@@ -1,5 +1,7 @@
 extends Control
 
+var os: String = OS.get_name()
+
 func _ready() -> void:
 	GameState.got_scammed.connect(on_got_scammed)
 
@@ -7,7 +9,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
-	elif Input.is_action_pressed("quit"):
+	elif Input.is_action_pressed("quit") and os !=  "Web":
 		get_tree().quit()
 
 func on_got_scammed() -> void:
