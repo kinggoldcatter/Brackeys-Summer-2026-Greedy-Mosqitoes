@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://b41aj12mgj8ce"]
+
+[ext_resource type="PackedScene" uid="uid://8qnu4lc5ia4c" path="res://Scenes/websites/browser.tscn" id="1_8tt2x"]
+[ext_resource type="Script" uid="uid://6kx44tv1g2a8" path="res://Scenes/websites/text_edit.gd" id="1_e83r0"]
+
+[node name="NeoBrowser" type="Node2D" unique_id=855445540]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=721791130]
+
+[node name="GUI" type="Control" parent="CanvasLayer" unique_id=1492661234]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/GUI" unique_id=1998870539]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopTabBar" type="HBoxContainer" parent="CanvasLayer/GUI/VBoxContainer" unique_id=1082824086]
+layout_mode = 2
+
+[node name="TabBar" type="TabBar" parent="CanvasLayer/GUI/VBoxContainer/TopTabBar" unique_id=46742898]
+layout_mode = 2
+size_flags_horizontal = 3
+current_tab = 0
+tab_close_display_policy = 1
+drag_to_rearrange_enabled = true
+tab_count = 2
+tab_0/title = "New Tab"
+tab_1/title = "hello"
+
+[node name="Button" type="Button" parent="CanvasLayer/GUI/VBoxContainer/TopTabBar" unique_id=207653362]
+layout_mode = 2
+text = "+"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI/VBoxContainer" unique_id=490125352]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer" unique_id=1700230141]
+layout_mode = 2
+
+[node name="Back&Forward" type="HBoxContainer" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer/HBoxContainer" unique_id=835261539]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer/HBoxContainer/Back&Forward" unique_id=1656503507]
+layout_mode = 2
+text = "<-"
+
+[node name="Forward" type="Button" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer/HBoxContainer/Back&Forward" unique_id=825454716]
+layout_mode = 2
+text = "->"
+
+[node name="Search" type="MarginContainer" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer" unique_id=1929518573]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Browser" type="LineEdit" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer/Search" unique_id=155131385 groups=["search_bar"]]
+layout_mode = 2
+placeholder_text = "Please Enter Site Name"
+script = ExtResource("1_e83r0")
+
+[node name="SearchButton" type="Button" parent="CanvasLayer/GUI/VBoxContainer/VBoxContainer" unique_id=1512340562]
+layout_mode = 2
+text = "Search The Web!"
+
+[node name="ContentDisplay" type="ScrollContainer" parent="CanvasLayer/GUI/VBoxContainer" unique_id=1826430009]
+layout_mode = 2
+size_flags_horizontal = 17
+size_flags_vertical = 19
+
+[node name="ContentCenterer" type="CenterContainer" parent="CanvasLayer/GUI/VBoxContainer/ContentDisplay" unique_id=823507937 groups=["web_browser"]]
+layout_mode = 2
+
+[node name="Wizbowz" parent="CanvasLayer/GUI/VBoxContainer/ContentDisplay/ContentCenterer" unique_id=607288629 instance=ExtResource("1_8tt2x")]
+layout_mode = 2
+size_flags_horizontal = 17
+size_flags_vertical = 16

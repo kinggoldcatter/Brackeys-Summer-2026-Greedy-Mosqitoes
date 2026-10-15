@@ -6,7 +6,7 @@ extends Area3D
 var possible_interaction: bool = false
 var looked_at: bool = false
 var interacting: bool = false
-@onready var tedit: LineEdit = $"../Monitor/SubViewport/TextEdit"
+@onready var tedit: LineEdit = get_tree().get_first_node_in_group("search_bar")
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("interact") and looked_at and possible_interaction and not interacting:

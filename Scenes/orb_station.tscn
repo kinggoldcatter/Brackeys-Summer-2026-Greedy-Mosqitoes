@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://pl4y5u2dg3pj" path="res://Scenes/orb.tscn" id="1_ah1ik"]
 [ext_resource type="Script" uid="uid://csd8w3ugx13dm" path="res://Scripts/WorkStations/page.gd" id="2_k7o43"]
-[ext_resource type="PackedScene" uid="uid://8qnu4lc5ia4c" path="res://Scenes/websites/browser.tscn" id="3_k7o43"]
-[ext_resource type="Script" uid="uid://6kx44tv1g2a8" path="res://Scenes/websites/text_edit.gd" id="4_m3vi7"]
+[ext_resource type="PackedScene" uid="uid://b41aj12mgj8ce" path="res://Scenes/NeoBrowser/Neo_Browser.tscn" id="3_k7o43"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_nry4h"]
 viewport_path = NodePath("Monitor/SubViewport")
@@ -18,7 +17,7 @@ size = Vector2(0.4, 0.3)
 orientation = 2
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nry4h"]
-size = Vector3(0.20703125, 0.14074707, 0.013977051)
+size = Vector3(0.213, 0.162, 0.001)
 
 [node name="OrbStation" type="Node3D" unique_id=1631146207]
 
@@ -37,20 +36,11 @@ mesh = SubResource("PlaneMesh_dxtnk")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, -0.28457883, -0.4403636)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Monitor/ContentQuad/MouseDetector" unique_id=969401653]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0036410093, 0.14127721, 0.21990293)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00065028697, 0.14257802, 0.21990293)
 shape = SubResource("BoxShape3D_nry4h")
 
-[node name="SubViewport" type="SubViewport" parent="Monitor" unique_id=1937700736 groups=["web_browser"]]
+[node name="SubViewport" type="SubViewport" parent="Monitor" unique_id=1937700736]
 gui_embed_subwindows = true
 size = Vector2i(640, 480)
 
-[node name="Browser" parent="Monitor/SubViewport" unique_id=607288629 instance=ExtResource("3_k7o43")]
-
-[node name="TextEdit" type="LineEdit" parent="Monitor/SubViewport" unique_id=2025750439]
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 24.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 10
-placeholder_text = "Please Enter Site Name"
-script = ExtResource("4_m3vi7")
+[node name="NeoBrowser" parent="Monitor/SubViewport" unique_id=855445540 instance=ExtResource("3_k7o43")]
